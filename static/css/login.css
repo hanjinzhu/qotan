@@ -1,0 +1,78 @@
+.login_bg{
+    background-color: #f5f5f5;
+    background-image: -ms-radial-gradient(center , circle farthest-side, #f7f7f7 0%, #f3f3f3  100%);
+    background-image: -moz-radial-gradient(center , circle farthest-side, #f7f7f7 0%, #f3f3f3  100%);
+    background-image: -o-radial-gradient(center , circle farthest-side, #f7f7f7 0%, #f3f3f3  100%);
+    background-image: -webkit-gradient(radial, center , 0, center , 487, color-stop(0, #f7f7f7), color-stop(1, #f3f3f3 ));
+    background-image: -webkit-radial-gradient(center , circle farthest-side, #f7f7f7 0%, #f3f3f3  100%);
+    background-image: radial-gradient(circle farthest-side at center , #f7f7f7  0%, #f3f3f3  100%);
+    padding: 50px 0;
+    min-height: 100%;
+    overflow: hidden;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    -webkit-background-size: cover;
+    background-size: cover;
+    position: relative;
+    -o-box-shadow: inset 0 3px 3px -3px rgba(0, 0, 0, 0.3);
+    -ms-box-shadow: inset 0 3px 3px -3px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: inset 0 3px 3px -3px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: inset 0 3px 3px -3px rgba(0, 0, 0, 0.3);
+    box-shadow: inset 0 3px 3px -3px rgba(0, 0, 0, 0.3);
+    font-family:  "微软雅黑",Georgia,"Merriweather","PT Serif","Times New Roman",serif;
+}
+.login-form-section{
+	color: #95a5a6;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: white;
+    -o-box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+    -ms-box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+}
+
+.section-title {
+    padding: 10px 20px;
+    background-color: white;
+}
+.section-title h3 {
+    color: #2ecc71;
+}
+.textbox-wrap .input-group {
+    border: 1px solid #e0e0e0;
+    background-color: #ffffff;
+}
+.textbox-wrap {
+    padding: 15px 20px;
+}
+.textbox-wrap .input-group .input-group-addon, .textbox-wrap .input-group input{
+    box-shadow: none;
+    outline: none;
+    background-color: transparent;
+    border: none;
+}
+
+.login-form-links {
+    padding: 20px;
+    margin-top: 5px;
+    background-color: white;
+}
+
+.login-form-action {
+    padding: 15px 20px 30px 20px;
+}
+.login-form-section .green {
+    color: #2ecc71;
+}
+.login-form-section .blue {
+    color: #3498db;
+}
+
+.login-form-action .green-btn{
+    border-radius: 0;
+    background-color: #2ecc71;
+    border: none;
+}
