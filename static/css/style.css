@@ -1,0 +1,116 @@
+body {
+	background: #f7f9fa;
+}
+.bs-docs-nav {
+	font-family:  "微软雅黑",Georgia,"Merriweather","PT Serif","Times New Roman",serif;
+    margin-bottom: 0;
+    background-color: #2bbbb2;
+    border-bottom: 0;
+}
+.navbar .brand {
+    color: #FFF;
+    text-shadow:none;
+}
+.navbar .nav>.active>a, .navbar .nav>.active>a:hover, .navbar .nav>.active>a:focus {
+    color: #FFF;
+    text-decoration: none;
+    background-color: #d89090;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+.navbar .nav>li>a {
+    color:#FFF;
+    text-shadow:none;
+}
+.navbar .nav>li>a:hover {
+    color:#FFF;
+}
+.bs-docs-nav  .icon-bar {
+    background-color: #fff;
+}
+@media (max-width: 979px)
+.navbar .btn-navbar {
+    display: block;
+}
+
+.navbar-toggle {
+    display: none;
+    position: relative;
+    float: right;
+    padding: 10px;
+    margin-top: 4px;
+    margin-right: 15px;
+    background-color: transparent;
+    background-image: none;
+    border: 1px solid #FFF;
+}
+@media screen and (max-width: 979px) {
+    .navbar-toggle {
+        display: block;
+    }
+}
+.navbar-toggle .icon-bar {
+    display: block;
+    width: 22px;
+    height: 2px;
+    border-radius: 1px;
+}
+.color-line {
+    background: #f7f9fa;
+    height: 3px;
+    background-image: -webkit-linear-gradient(left, #34495e, #34495e 25%, #9b59b6 25%, #9b59b6 35%, #3498db 35%, #3498db 45%, #62cb31 45%, #62cb31 55%, #ffb606 55%, #ffb606 65%, #e67e22 65%, #e67e22 75%, #e74c3c 85%, #e74c3c 85%, #c0392b 85%, #c0392b 100%);
+    background-image: -moz-linear-gradient(left, #34495e, #34495e 25%, #9b59b6 25%, #9b59b6 35%, #3498db 35%, #3498db 45%, #62cb31 45%, #62cb31 55%, #ffb606 55%, #ffb606 65%, #e67e22 65%, #e67e22 75%, #e74c3c 85%, #e74c3c 85%, #c0392b 85%, #c0392b 100%);
+    background-image: -ms-linear-gradient(left, #34495e, #34495e 25%, #9b59b6 25%, #9b59b6 35%, #3498db 35%, #3498db 45%, #62cb31 45%, #62cb31 55%, #ffb606 55%, #ffb606 65%, #e67e22 65%, #e67e22 75%, #e74c3c 85%, #e74c3c 85%, #c0392b 85%, #c0392b 100%);
+    background-image: linear-gradient(to right, #34495e, #34495e 25%, #9b59b6 25%, #9b59b6 35%, #3498db 35%, #3498db 45%, #62cb31 45%, #62cb31 55%, #ffb606 55%, #ffb606 65%, #e67e22 65%, #e67e22 75%, #e74c3c 85%, #e74c3c 85%, #c0392b 85%, #c0392b 100%);
+    background-size: 100% 6px;
+    background-position: 50% 100%;
+    background-repeat: no-repeat;
+}
+.item_content {
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #dcdce0;
+    color: #313131;
+    display: block;
+    height: auto;
+    max-width: 74em;
+    margin-left: auto;
+    margin-right: auto;
+    min-height: 80px;
+    overflow: hidden;
+    position: relative;
+    -webkit-transition: opacity .2s ease-out;
+    transition: opacity .2s ease-out;
+}
+.item {
+    box-sizing: border-box;
+    float: left;
+    position: relative;
+    height: auto;
+    padding: 0;
+    text-align: left;
+    -webkit-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
+    width: 100%;
+}
+
+@media (min-width: 1200px) { 
+    .item {
+        padding: .78em;
+        width: 25%;
+    }
+    .item_content{
+        height: 280px;
+    }
+}
+ 
+/* 平板电脑和小屏电脑之间的分辨率 */
+@media (min-width: 768px) and (max-width: 979px) {
+
+}
+ 
+/* 横向放置的手机和竖向放置的平板之间的分辨率 */
+@media (max-width: 767px) { 
+
+}
