@@ -1,0 +1,48 @@
+
+.item_content {
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #dcdce0;
+    color: #313131;
+    display: block;
+    height: auto;
+    max-width: 74em;
+    margin-left: auto;
+    margin-right: auto;
+    min-height: 80px;
+    overflow: hidden;
+    position: relative;
+    -webkit-transition: opacity .2s ease-out;
+    transition: opacity .2s ease-out;
+}
+.item {
+    box-sizing: border-box;
+    float: left;
+    position: relative;
+    height: auto;
+    padding: 0;
+    text-align: left;
+    -webkit-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
+    width: 100%;
+}
+
+@media (min-width: 1200px) { 
+    .item {
+        padding: .78em .78em 0px 0px;
+        width: 25%;
+    }
+    .item_content{
+        height: 280px;
+    }
+}
+ 
+/* 平板电脑和小屏电脑之间的分辨率 */
+@media (min-width: 768px) and (max-width: 979px) {
+
+}
+ 
+/* 横向放置的手机和竖向放置的平板之间的分辨率 */
+@media (max-width: 767px) { 
+
+}

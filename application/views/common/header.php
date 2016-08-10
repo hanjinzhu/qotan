@@ -10,6 +10,8 @@
     <link href="http://cdn.bootcss.com/bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="http://cdn.bootcss.com/bootstrap/2.3.2/css/bootstrap-responsive.min.css" rel="stylesheet">
     <link href="/static/css/style.css" rel="stylesheet">
+
+    <link href="/static/css/home.css" rel="stylesheet">
   </head>
   <body>
   

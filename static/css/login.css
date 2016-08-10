@@ -1,12 +1,12 @@
 .login_bg{
     background-color: #f5f5f5;
-    background-image: -ms-radial-gradient(center , circle farthest-side, #f7f7f7 0%, #f3f3f3  100%);
-    background-image: -moz-radial-gradient(center , circle farthest-side, #f7f7f7 0%, #f3f3f3  100%);
-    background-image: -o-radial-gradient(center , circle farthest-side, #f7f7f7 0%, #f3f3f3  100%);
-    background-image: -webkit-gradient(radial, center , 0, center , 487, color-stop(0, #f7f7f7), color-stop(1, #f3f3f3 ));
-    background-image: -webkit-radial-gradient(center , circle farthest-side, #f7f7f7 0%, #f3f3f3  100%);
-    background-image: radial-gradient(circle farthest-side at center , #f7f7f7  0%, #f3f3f3  100%);
-    padding: 50px 0;
+    background-image: -ms-radial-gradient(center , circle farthest-side, #68d6cf 0%, #2bbbb2  100%);
+    background-image: -moz-radial-gradient(center , circle farthest-side, #68d6cf 0%, #2bbbb2  100%);
+    background-image: -o-radial-gradient(center , circle farthest-side, #68d6cf 0%, #2bbbb2  100%);
+    background-image: -webkit-gradient(radial, center , 0, center , 487, color-stop(0, #68d6cf), color-stop(1, #2bbbb2 ));
+    background-image: -webkit-radial-gradient(center , circle farthest-side, #68d6cf 0%, #2bbbb2  100%);
+    background-image: radial-gradient(circle farthest-side at center , #68d6cf  0%, #2bbbb2  100%);
+    padding: 200px 0;
     min-height: 100%;
     overflow: hidden;
     -moz-background-size: cover;
@@ -33,7 +33,13 @@
     -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
     box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
 }
-
+.remember_me {margin-top: 14px;}
+.other_login_type{
+    margin-top:20px;
+} 
+.other_login_type a{
+    margin-right:4px;
+}
 .section-title {
     padding: 10px 20px;
     background-color: white;
@@ -75,4 +81,11 @@
     border-radius: 0;
     background-color: #2ecc71;
     border: none;
+}
+.return_link{
+    color:#fff;position:absolute;top:160px;
+}
+.return_link a , .return_link i {
+    color:#fff;  
+    margin-right: 4px;
 }
