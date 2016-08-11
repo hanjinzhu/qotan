@@ -29,14 +29,14 @@
               <li <?php if($this->router->class == 'home'):?>class="active"<?php endif;?>>
                 <a href="/home">主页</a>
               </li>
-              <li <?php if($this->router->class == 'collect'):?>class="active"<?php endif;?>>
-                <a href="/collect">收集</a>
-              </li>
               <li <?php if($this->router->class == 'explore'):?>class="active"<?php endif;?>>
                 <a href="/explore">发现</a>
               </li>
               <li <?php if($this->router->class == 'timeline'):?>class="active"<?php endif;?>>
                 <a href="/timeline">动态</a>
+              </li>
+              <li <?php if($this->router->class == 'about'):?>class="active"<?php endif;?>>
+                <a href="/about">关于离线阅读</a>
               </li>
               <li <?php if($this->router->class == 'center'):?>class="active"<?php endif;?>>
                 <a href="/center">个人中心</a>

@@ -28,7 +28,12 @@
     transform: translate3d(0,0,0);
     width: 100%;
 }
-
+.item_raw_link{
+    position:absolute;bottom:0;left:10px;
+}
+.item_action{
+    position:absolute;bottom:0;right:10px;
+}
 @media (min-width: 1200px) { 
     .item {
         padding: 4px;
