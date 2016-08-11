@@ -5,7 +5,8 @@ $this->load->view('common/header');
 
     <div class="input-prepend">
         <span class="add-on"><i class="fa fa-link"></i></span>
-        <input  type="password" placeholder="http://">
+        <input  type="text" placeholder="http://" style="width:82%">
+        <button type="submit" class="btn btn-success pull-right green-btn submit_url_button">提交网址收录</button>
     </div>
 
     <div class="item">

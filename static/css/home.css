@@ -1,4 +1,7 @@
-
+.submit_url_button{
+   padding: 7px 14px;
+   border: none;
+}
 .item_content {
     padding: 10px;
     background-color: #fff;
@@ -6,7 +9,6 @@
     color: #313131;
     display: block;
     height: auto;
-    max-width: 74em;
     margin-left: auto;
     margin-right: auto;
     min-height: 80px;
@@ -29,11 +31,11 @@
 
 @media (min-width: 1200px) { 
     .item {
-        padding: .78em .78em 0px 0px;
+        padding: 4px;
         width: 25%;
     }
     .item_content{
-        height: 280px;
+        height: 250px;
     }
 }
  
