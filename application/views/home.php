@@ -3,6 +3,10 @@ $this->load->view('common/header');
 ?>
 <div class="container" style="margin-top:80px;">
 
+    <div class="input-prepend">
+        <span class="add-on"><i class="fa fa-link"></i></span>
+        <input  type="password" placeholder="http://">
+    </div>
 
     <div class="item">
         <div class="item_content">

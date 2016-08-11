@@ -6,41 +6,43 @@
     <meta name="renderer" content="webkit">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>注册账号-离线网页阅读神器</title>
-    <link href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/css/font-awesome.min.css" rel="stylesheet">
+    <link href="http://cdn.bootcss.com/bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/css/style.css" rel="stylesheet">
     <link href="/static/css/login.css" rel="stylesheet">
   </head>
   <body class="login_bg">
 
         <div class="login-form-section">
             <div class="return_link">
-                <a href="/index"><i class="glyphicon glyphicon-arrow-left"></i>返回</a>
+                <a href="/index"><i class="fa fa-arrow-left"></i>返回</a>
             </div>
             <form>
                 <div class="section-title">
                     <h3>账户注册</h3>
                 </div>
                 <div class="textbox-wrap">
-                    <div class="input-group">
-                        <div class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></div>
-                        <input type="email"  class="form-control" placeholder="请输入电子邮箱">
+                    <div class="input-prepend">
+                        <span class="add-on"><i class="fa fa-envelope"></i></span>
+                        <input  type="text" placeholder="请输入电子邮箱" >
                     </div>
                 </div>
                 <div class="textbox-wrap">
-                    <div class="input-group">
-                        <div class="input-group-addon"><i class="glyphicon glyphicon-user"></i></div>
-                        <input type="email"  class="form-control" placeholder="用户昵称">
+                    <div class="input-prepend">
+                        <span class="add-on"><i class="fa fa-user"></i></span>
+                        <input type="text"  placeholder="用户昵称">
                     </div>
                 </div>
                 <div class="textbox-wrap">
-                    <div class="input-group">
-                        <div class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></div>
-                        <input type="password"  class="form-control " placeholder="请输入密码">
+                    <div class="input-prepend">
+                        <span class="add-on"><i class="fa fa-key"></i></span>
+                        <input  type="password" placeholder="请输入密码">
                     </div>
                 </div>
                 <div class="textbox-wrap">
-                    <div class="input-group">
-                        <div class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></div>
-                        <input type="password"  class="form-control " placeholder="请输入验证密码">
+                    <div class="input-prepend">
+                        <span class="add-on"><i class="fa fa-key"></i></span>
+                        <input  type="password" placeholder="请输入验证密码">
                     </div>
                 </div>
                 <div class="clearfix login-form-action">

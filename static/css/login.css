@@ -19,7 +19,7 @@
     -moz-box-shadow: inset 0 3px 3px -3px rgba(0, 0, 0, 0.3);
     -webkit-box-shadow: inset 0 3px 3px -3px rgba(0, 0, 0, 0.3);
     box-shadow: inset 0 3px 3px -3px rgba(0, 0, 0, 0.3);
-    font-family:  "微软雅黑",Georgia,"Merriweather","PT Serif","Times New Roman",serif;
+    font-family:  "Microsoft YaHei",Georgia,"Merriweather","PT Serif","Times New Roman",serif;
 }
 .login-form-section{
 	color: #95a5a6;
@@ -33,7 +33,14 @@
     -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
     box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
 }
-.remember_me {margin-top: 14px;}
+
+
+
+
+
+
+
+.remember_me {margin-top: 12px;}
 .other_login_type{
     margin-top:20px;
 } 
@@ -45,14 +52,20 @@
     background-color: white;
 }
 .section-title h3 {
+    font-weight: 500;
+    line-height: 1.1;
     color: #2ecc71;
+}
+.textbox-wrap h4 {
+    font-weight: 300;
+    line-height: 1.1;
 }
 .textbox-wrap .input-group {
     border: 1px solid #e0e0e0;
     background-color: #ffffff;
 }
 .textbox-wrap {
-    padding: 15px 20px;
+    padding: 8px 20px;
 }
 .textbox-wrap .input-group .input-group-addon, .textbox-wrap .input-group input{
     box-shadow: none;
@@ -62,7 +75,6 @@
 }
 
 .login-form-links {
-    padding: 20px;
     margin-top: 5px;
     background-color: white;
 }
@@ -79,13 +91,11 @@
 
 .login-form-action .green-btn{
     border-radius: 0;
-    background-color: #2ecc71;
-    border: none;
 }
 .return_link{
     color:#fff;position:absolute;top:160px;
 }
-.return_link a , .return_link i {
+.return_link a , .return_link i{
     color:#fff;  
     margin-right: 4px;
 }

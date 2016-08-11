@@ -70,6 +70,7 @@ body {
 .input-prepend{
     border: 1px solid #e0e0e0;
     background-color: #ffffff;
+    display: block;
 }
 
 .input-prepend input,.input-prepend input:focus,.input-prepend .add-on{
@@ -79,8 +80,26 @@ body {
     border: none;
 }
 
-.green-btn{
+.my-btn{
     border-radius: 0;
-    background-color: #2ecc71;
+    box-shadow: none;
     border: none;
+    min-width: 100px;
+}
+[class^="icon-"], [class*=" icon-"] {
+    vertical-align: inherit;
+}
+input[type="text"], input[type="password"]{
+    height: 26px;
+    line-height: 26px;
+}
+.input-prepend .add-on {
+    margin-top: 4px;
+    margin-left: 6px;
+}
+form{
+    margin:0px;
+}
+input, button, select, textarea {
+    font-family:  "Microsoft YaHei",Georgia,"Merriweather","PT Serif","Times New Roman",serif;
 }
