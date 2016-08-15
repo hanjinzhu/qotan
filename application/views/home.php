@@ -80,7 +80,7 @@ $this->load->view('common/header');
                 <li class="action_share" title="分享"><i class="fa fa-share"></i></li>
                 <li class="action_mark" title="移动"><i class="fa fa-files-o"></i></li>
                 <li class="action_delete" title="删除"><i class="fa fa-trash"></i></li>
-                <li class="action_favorite" title="添加到收藏夹"><i class="fa fa-star-o"></i></li>
+                <li class="action_favo rite" title="添加到收藏夹"><i class="fa fa-star-o"></i></li>
             </ul>
         </div>
     </div>

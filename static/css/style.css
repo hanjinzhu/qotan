@@ -1,6 +1,14 @@
 body {
 	background: #f7f9fa;
 }
+.navbar .nav li.dropdown>.dropdown-toggle .caret {
+    border-top-color: #fff;
+    border-bottom-color: #fff;
+}
+.navbar .nav li.dropdown.open>.dropdown-toggle, .navbar .nav li.dropdown.active>.dropdown-toggle, .navbar .nav li.dropdown.open.active>.dropdown-toggle {
+    color: #fff;
+    background-color: #d89090;
+}
 .bs-docs-nav {
 	font-family:  "微软雅黑",Georgia,"Merriweather","PT Serif","Times New Roman",serif;
     margin-bottom: 0;
