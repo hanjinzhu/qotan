@@ -5,7 +5,7 @@ $this->load->view('common/header');
 
     <div class="input-prepend">
         <span class="add-on"><i class="fa fa-link"></i></span>
-        <input  type="text" placeholder="http://" style="width:82%">
+        <input  type="text" placeholder="http://" style="width:82%" class="submit_url_input">
         <button type="submit" class="btn btn-success pull-right green-btn submit_url_button">提交网址收录</button>
     </div>
 
@@ -88,3 +88,20 @@ $this->load->view('common/header');
 <?php
 $this->load->view('common/footer');
 ?>
+
+<script>
+$(document).ready(function(){
+    $(".submit_url_button").click(function(){
+        var url = $(".submit_url_input").val();
+        if(url){
+            $.post("/collect/collecturl", {url:url},function(data){
+                if(data['code'] == 0){
+                    alert("success");
+                }else{
+                    alert("fail");
+                }
+            },"json");
+        }
+    });
+});
+</script>

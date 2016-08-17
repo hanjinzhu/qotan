@@ -23,13 +23,13 @@ class HtmlExtract {
 	 * 源码行数组
 	 * @var array
 	 */
-	public $textLines   = array();
+	public $textLines   = [];
 	
 	/**
 	 * block片段
 	 * @var array
 	 */
-	public $blksLen     = array();
+	public $blksLen     = [];
 	
 	public $title = '';
 
@@ -56,11 +56,13 @@ class HtmlExtract {
 	// METHODS
 	///////////////////////////////////
 	
-	function __construct( $_url, $_blkSize = 3 ) {
+	function __construct( $params) {
+		$_url = $params['url'];
 		$this->url = $_url;
 		$parse= parse_url ( $_url );
 		$this->urlBase = $parse['scheme']."://".$parse['host'];
-		$this->blkSize = $_blkSize;
+		$this->blkSize = 3;   //初始化行块长度
+		$this->rawPageCode = $this->_fetchUrlContent( $this->url );
 	}
 	private function _fetchUrlContent($url, $timeout = 5, $method="GET"){
 		$opts = [
@@ -72,14 +74,7 @@ class HtmlExtract {
 		$context = stream_context_create($opts); 
 		return file_get_contents($url, false, $context);
 	}
-	/**
-	 * 抓取网页内容
-	 * @return void
-	 */
-	function getPageCode() {
-		//如果目标响应缓慢 高并发下可能会导致PHP-CGI爆掉返回502  添加过期时间
-		$this->rawPageCode = $this->_fetchUrlContent( $this->url );
-	}
+
 	
 	/**
 	 * 检查原始编码 处理完毕需要转换成UTF8
@@ -95,8 +90,20 @@ class HtmlExtract {
 	 */
 	function preProcess() {
 		$content = $this->rawPageCode;
+		if($this->charset!='UTF-8'){
+			$content = iconv($this->charset,"UTF-8//IGNORE",$content);
+		}
+		preg_match("/<title>(.*)<\/title>/si",$content, $title);
+		$filterTitleChar = ['|','-','/','#','_'];
+		$title = $title[1];
+		foreach($filterTitleChar as $v){
+			if(strpos($title,$v)!==false){
+				$title=strchr($title,$v,true);//去除无意义的信息  正文标题 分隔符 网站描述信息  只留正文标题
+			}
+		}
+		$this->title = $title;
 		//预处理
-		// 1. DTD information 2. HTML comment 3. Java Script 4. CSS
+		// 1. DTD  2. 注释 3. Java Script 4. CSS
 		$pattern = ['/<!DOCTYPE.*?>/si','/<!--.*?-->/s','/<script.*?>.*?<\/script>/si','/<style.*?>.*?<\/style>/si'];
 		$replacement = ['','','',''];
 		$content = preg_replace( $pattern, $replacement, $content );
@@ -120,7 +127,7 @@ class HtmlExtract {
 	 * @return void
 	 */
 	function getTextLines( $rawText ) {
-		$order = array( "\r\n", "\n", "\r" );
+		$order = [ "\r\n", "\n", "\r" ];
 		$replace = '\n';
 		$rawText = str_replace( $order, $replace, $rawText );
 		$lines = explode( '\n', $rawText );
@@ -156,7 +163,6 @@ class HtmlExtract {
 	function getPlainText() {
 		$pattern = '/<.*?>/s';
 		$replacement = '';
-		$this->getPageCode();
 		$this->procEncoding();
 		$preProcText = $this->preProcess();
 		$this->getTextLines( $preProcText );
@@ -191,7 +197,7 @@ class HtmlExtract {
 			}
 		}
 
-		$text = tidy_parse_string($this->text,array('output-html' => true), 'utf8');
+		$text = tidy_parse_string($this->text,['output-html' => true], 'utf8');
 		$text->cleanRepair();
 		$pattern="/<[img|IMG].*?src=[\'|\"](.*)[\'|\"].*?[\/]?>/";
 		preg_match_all($pattern,$text,$matches);
@@ -217,10 +223,14 @@ class HtmlExtract {
 			$text = str_replace($find,$replace,$text);
 		}
 		//preg_match_all('/<img src=".*"\/>/', $text, $matches );
-		if($this->charset!='UTF-8'){
-			$text = iconv($this->charset,"UTF-8//IGNORE",$text);
-		}
 		return $text;
+	}
+
+	public function getRawText(){
+		return $this->rawPageCode;
+	}
+	public function getTitle(){
+		return $this->title;
 	}
 }
 ?>
