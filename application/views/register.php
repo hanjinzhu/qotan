@@ -16,33 +16,34 @@
             <div class="return_link">
                 <a href="/index"><i class="fa fa-arrow-left"></i>返回</a>
             </div>
-            <form>
-                <div class="section-title">
-                    <h3>账户注册</h3>
+            <div class="section-title">
+                <h3>账户注册</h3>
+            </div>
+            <div class="textbox-wrap">
+                <div class="input-prepend">
+                    <span class="add-on"><i class="fa fa-envelope"></i></span>
+                    <input  type="text" placeholder="请输入电子邮箱" class="email" maxlength="50">
                 </div>
-                <div class="textbox-wrap">
-                    <div class="input-prepend">
-                        <span class="add-on"><i class="fa fa-envelope"></i></span>
-                        <input  type="text" placeholder="请输入电子邮箱" class="email" maxlength="50">
-                    </div>
+            </div>
+            <div class="textbox-wrap">
+                <div class="input-prepend">
+                    <span class="add-on"><i class="fa fa-user"></i></span>
+                    <input type="text"  placeholder="用户昵称" class="nick" maxlength="20">
                 </div>
-                <div class="textbox-wrap">
-                    <div class="input-prepend">
-                        <span class="add-on"><i class="fa fa-user"></i></span>
-                        <input type="text"  placeholder="用户昵称" class="nick" maxlength="20">
-                    </div>
+            </div>
+            <div class="textbox-wrap">
+                <div class="input-prepend">
+                    <span class="add-on"><i class="fa fa-key"></i></span>
+                    <input  type="password" placeholder="请输入密码" class="password" maxlength="20">
                 </div>
-                <div class="textbox-wrap">
-                    <div class="input-prepend">
-                        <span class="add-on"><i class="fa fa-key"></i></span>
-                        <input  type="password" placeholder="请输入密码" class="password" maxlength="20">
-                    </div>
-                </div>
-                <div class="clearfix login-form-action">
-                    <button type="submit" class="btn btn-success pull-left  green-btn" style="width:100%">注册</button>
-                    <div class="clearfix"></div>
-                </div>
-            </form> 
+            </div>
+            <div class="clearfix login-form-action">
+                <button type="submit" class="btn btn-success pull-left  green-btn submit_register" style="width:100%">注册</button>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+        <div class="container register_success_info">
+            <i class="fa fa-check"></i> 感谢您注册和使用离线阅读。我们给您发送了验证邮件激活您的帐号 <a href="/home"><span id="mes">5</span> 秒钟后返回</a>
         </div>
     </body>
     <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>

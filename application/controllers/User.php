@@ -15,26 +15,59 @@ class User extends CI_Controller {
 
 	public function checkEmail(){
 		if($this->input->is_ajax_request()){
-			$email = $this->input->get('email', true);
 			$this->load->model('user_model','user');
+			$email = $this->input->get('email', true);
 			$ret = $this->user->validEmail($email);
 			output($ret);
 		}
 	}
 
 	public function checkPassword(){
-		$password = $this->input->get('password', true);
-		$this->load->model('user_model','user');
-		$ret = $this->user->validPassword($password);
-		output($ret);
+		if($this->input->is_ajax_request()){
+			$this->load->model('user_model','user');
+			$password = $this->input->get('password', true);
+			$ret = $this->user->validPassword($password);
+			output($ret);
+		}
 
 	}
 
 	public function checkNick(){
-		$nick = $this->input->get('nick', true);
-		$this->load->model('user_model','user');
-		$ret = $this->user->validNick($nick);
-		output($ret);
+		if($this->input->is_ajax_request()){
+			$this->load->model('user_model','user');
+			$nick = $this->input->get('nick', true);
+			$ret = $this->user->validNick($nick);
+			output($ret);
+		}
+	}
+
+	public function doRegister(){
+		if($this->input->is_ajax_request()){
+			$this->load->model('user_model','user');
+			$email = $this->input->get('email', true);
+			$nick = $this->input->get('nick', true);
+			$password = $this->input->get('password', true);
+			$ret = $this->user->validEmail($email);
+			if($ret['code']!=0){
+				$ret['error_type'] = 'email';
+				output($ret);
+			}
+			$ret = $this->user->validNick($nick);
+			if($ret['code']!=0){
+				$ret['error_type'] = 'nick';
+				output($ret);
+			}
+			$ret = $this->user->validPassword($password);
+			if($ret['code']!=0){
+				$ret['error_type'] = 'password';
+				output($ret);
+			}
+			//自检完毕 注册账户
+			$ret  =  $this->user->register($email, $nick, $password);
+			output($ret);
+		}
+	
+
 	}
 
 }
