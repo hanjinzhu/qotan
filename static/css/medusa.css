@@ -1,0 +1,17 @@
+body {
+	padding: 1rem;
+    font: 400 18px/1.62 Georgia,"Merriweather","PT Serif","Times New Roman",serif;
+    color: #444443;
+}
+img {width: 100%;}
+pre {
+	border-left: 3px solid #dadada;
+	overflow:scroll;
+	padding-left: 10px;
+	color: #4c4c4c;
+	background-color: #f9f9f7;
+}
+pre code{
+	border: none;
+	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+}

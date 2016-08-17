@@ -93,3 +93,9 @@
     color:#fff;  
     margin-right: 4px;
 }
+.register_success_info{
+    text-align:center;border:2px dashed #fff;padding:20px;color:#fff;display:none;
+}
+.register_success_info a{
+    color:#fff;text-decoration: underline;
+}
