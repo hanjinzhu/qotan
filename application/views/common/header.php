@@ -39,9 +39,6 @@
               <li <?php if($this->router->class == 'about'):?>class="active"<?php endif;?>>
                 <a href="/about">关于离线阅读</a>
               </li>
-              <li <?php if($this->router->class == 'center'):?>class="active"<?php endif;?>>
-                <a href="/center">个人中心</a>
-              </li>
             </ul>
 
             <ul class="nav pull-right">

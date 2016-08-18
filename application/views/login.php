@@ -11,7 +11,9 @@
     <link href="/static/css/style.css" rel="stylesheet">
     <link href="/static/css/login.css" rel="stylesheet">
   </head>
+
   <body class="login_bg">
+       <div class="color-line" style="position:relative;top:-200px"></div>
        <div class="login-form-section">
             <div class="return_link">
                 <a href="/index"><i class="fa fa-arrow-left"></i>返回</a>
@@ -33,11 +35,6 @@
                     </div>
                 </div>
                 <div class="clearfix login-form-action">
-                    <div class="pull-left remember_me">
-                        <label class="checkbox-inline">
-                          <input type="checkbox"  value="option3" checked="checked"  style="vertical-align: top;"> 记住我
-                        </label>
-                    </div>
                     <button type="submit" class="pull-right btn btn-success my-btn">登录</button>
                     <div class="clearfix"></div>
                     <div class="other_login_type">
