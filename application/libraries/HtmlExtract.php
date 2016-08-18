@@ -32,7 +32,7 @@ class HtmlExtract {
 	public $blksLen     = [];
 	
 	public $title = '';
-
+	public $platform = '1';
 	/**
 	 * 系统最后的转码html
 	 * @var string
@@ -59,6 +59,7 @@ class HtmlExtract {
 	function __construct( $params) {
 		$_url = $params['url'];
 		$this->url = $_url;
+		$this->platform = $params['platform'];
 		$parse= parse_url ( $_url );
 		$this->urlBase = $parse['scheme']."://".$parse['host'];
 		$this->blkSize = 3;   //初始化行块长度
@@ -178,12 +179,12 @@ class HtmlExtract {
 			if( $i >= $blkNum ) break;
 			$tmp = $i;
 			$curTextLen = 0;
-			$portion = '<meta content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport" />';
-			$portion = $portion.'<link rel="stylesheet" type="text/css" href="/normalize.css" /><link rel="stylesheet" type="text/css" href="/medusa.css" />'; //加载自适应和自定义的CSS
+			$portion = $this-> loadStyle();
+			//$portion = '<meta content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport" />';
+			//$portion = $portion.'<link rel="stylesheet" type="text/css" href="/normalize.css" /><link rel="stylesheet" type="text/css" href="/medusa.css" />'; //加载自适应和自定义的CSS
 			while( ($i < $blkNum) && ($this->blksLen[$i] != 0) ) {
 				if( preg_replace( $pattern, $replacement, $this->textLines[$i] != '' )){
 					$portion .= $this->textLines[$i]."\r\n";
-
 					//$portion .= '<br />';
 					$curTextLen += strlen( preg_replace( $pattern, $replacement, $this->textLines[$i]));
 				}
@@ -196,7 +197,6 @@ class HtmlExtract {
 				$end = $i - 1;
 			}
 		}
-
 		$text = tidy_parse_string($this->text,['output-html' => true], 'utf8');
 		$text->cleanRepair();
 		$pattern="/<[img|IMG].*?src=[\'|\"](.*)[\'|\"].*?[\/]?>/";
@@ -232,5 +232,21 @@ class HtmlExtract {
 	public function getTitle(){
 		return $this->title;
 	}
+
+	private function loadStyle(){
+        $styleString = '';
+        switch ($this->platform) {
+            case '1':
+                $styleString='<meta content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport" />';
+                $styleString.='<link rel="stylesheet" type="text/css" href="/static/css/normalize.css" />';
+                $styleString.='<link rel="stylesheet" type="text/css" href="/static/css/medusa_pc.css" />';
+                break;
+            
+            default:
+                # code...
+                break;
+        }
+        return $styleString;
+    }
 }
 ?>

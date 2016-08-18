@@ -7,10 +7,10 @@ function output($data, $callback='', $exit = true){
 			header("Content-type: text/javascript; charset=UTF-8");
 		}
 		$jsonp = $callback;
-		echo $jsonp . '(' . json_encode($data) . ')';
+		echo $jsonp . '(' . json_encode($data,JSON_UNESCAPED_UNICODE) . ')';
 	}
 	else{
-		$result = json_encode($data);
+		$result = json_encode($data,JSON_UNESCAPED_UNICODE);
 		if (function_exists('json_last_error')) {
 			$error = json_last_error();
 			if ($error !== JSON_ERROR_NONE) {
