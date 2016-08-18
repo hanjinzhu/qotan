@@ -204,23 +204,23 @@ class HtmlExtract {
 		$imgMatches = $matches[1];
 		$find = $replace =[];
 		if(is_array($imgMatches)){
-			foreach($imgMatches as $v){
-				$find[] = $v;
-				$filePath = $v;
-				$ext = pathinfo($v,PATHINFO_EXTENSION);
-				if(!preg_match("/^[http|https].*/si", $filePath)){
-					$filePath = $this->urlBase.$v;
-				}
-				$content = $this->_fetchUrlContent($filePath);
-				if($ext){
-					$toPath = "file/".md5($filePath).".".$ext;
-				}else{
-					$toPath = "file/".md5($filePath);
-				}
-				$replace[] = $toPath;
-				file_put_contents($toPath, $content);
-			}
-			$text = str_replace($find,$replace,$text);
+			//foreach($imgMatches as $v){
+			//	$find[] = $v;
+			//	$filePath = $v;
+			//	$ext = pathinfo($v,PATHINFO_EXTENSION);
+			//	if(!preg_match("/^[http|https].*/si", $filePath)){
+			//		$filePath = $this->urlBase.$v;
+			//	}
+			//	$content = $this->_fetchUrlContent($filePath);
+			//	if($ext){
+			//		$toPath = "file/".md5($filePath).".".$ext;
+			//	}else{
+			//		$toPath = "file/".md5($filePath);
+			//	}
+			//	$replace[] = $toPath;
+			//	file_put_contents($toPath, $content);
+			//}
+			//$text = str_replace($find,$replace,$text);
 		}
 		//preg_match_all('/<img src=".*"\/>/', $text, $matches );
 		return $text;
@@ -241,7 +241,6 @@ class HtmlExtract {
                 $styleString.='<link rel="stylesheet" type="text/css" href="/static/css/normalize.css" />';
                 $styleString.='<link rel="stylesheet" type="text/css" href="/static/css/medusa_pc.css" />';
                 break;
-            
             default:
                 # code...
                 break;

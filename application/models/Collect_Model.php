@@ -20,10 +20,10 @@ class Collect_Model extends CI_Model {
             return ['code' => 101, 'msg' => '用户信息解析错误，请重新登录再试'];
         }
         $this->load->library('htmlExtract',['url' => $url,'platform'=>$platform]);
-        $rawData = $this->htmlextract->getRawText();
-        $transData = $this->htmlextract->getPlainText();
+        $rawData = addslashes($this->htmlextract->getRawText());
+        $transData = addslashes($this->htmlextract->getPlainText());
         $title = $this->htmlextract->getTitle();
-        $summary = mb_substr(strip_tags(str_replace(["\r\n","\n","\r"],"",$transData)), 0, 400);
+        $summary = addslashes(mb_substr(strip_tags($transData), 0, 500)).'...';
 
         $data = [
             'user_id' => $userId,
@@ -59,6 +59,7 @@ class Collect_Model extends CI_Model {
             $sql.=" AND user_id='$userId'";
         }
         $ret = $this->db->query($sql)->row_array();
+        $ret['trans_data'] = stripcslashes($ret['trans_data']);
         if(!$ret){
             return ['code' => 100, 'msg' => '请求数据不存在','data'=>$ret];
         }
