@@ -25,17 +25,17 @@
                 <div class="textbox-wrap">
                     <div class="input-prepend">
                         <span class="add-on"><i class="fa fa-envelope"></i></span>
-                        <input  type="text" placeholder="请输入电子邮箱" >
+                        <input  type="text" class="email" placeholder="请输入电子邮箱" >
                     </div>
                 </div>
                 <div class="textbox-wrap">
                     <div class="input-prepend">
                         <span class="add-on"><i class="fa fa-key"></i></span>
-                        <input  type="password" placeholder="请输入密码">
+                        <input  type="password" class="password" placeholder="请输入密码">
                     </div>
                 </div>
                 <div class="clearfix login-form-action">
-                    <button type="submit" class="pull-right btn btn-success my-btn">登录</button>
+                    <button type="submit" class="pull-right btn btn-success my-btn login_btn">登录</button>
                     <div class="clearfix"></div>
                     <div class="other_login_type">
                         <span>其他登陆方式：</span>
@@ -62,3 +62,16 @@
         </div>
   </body>
 </html>
+<script>
+    $(document).ready(function(){
+        $(".login_btn").click(function(){
+            $.get("/user/dologin", {email:$(".email").val(),password:$(".password").val()},function(data){
+                if(data['code'] == 0){
+                    window.location.href="/home";
+                }else{
+                    //todo 错误提示
+                }
+            },"json");
+        });
+    });
+</script>

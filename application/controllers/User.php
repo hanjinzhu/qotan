@@ -41,6 +41,17 @@ class User extends CI_Controller {
 		}
 	}
 
+	public function doLogin(){
+		if($this->input->is_ajax_request()){
+			$email = $this->input->post('email', true);
+			$password = $this->input->post('password', true);
+			$verify_code ='';
+			$ret  =  $this->user->login($email, $password, $verify_code);
+			
+			output($ret);
+		}
+		
+	}
 	public function doRegister(){
 		if($this->input->is_ajax_request()){
 			$this->load->model('user_model','user');
