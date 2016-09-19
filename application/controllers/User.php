@@ -43,11 +43,14 @@ class User extends MY_Controller {
 
 	public function doLogin(){
 		if($this->input->is_ajax_request()){
+			$this->load->model('user_model','user');
 			$email = $this->input->post('email', true);
 			$password = $this->input->post('password', true);
 			$verify_code ='';
 			$ret  =  $this->user->login($email, $password, $verify_code);
-			
+			if($ret['code']==0){
+				$this->user->setAuth($ret['data']['user_id'],$ret['data']['auth_key']);
+			}
 			output($ret);
 		}
 		
@@ -73,8 +76,19 @@ class User extends MY_Controller {
 				$ret['error_type'] = 'password';
 				output($ret);
 			}
+			$ret = $this->user->getUserInfoByEmail($email);
+			if($ret['code'] == 0 && !empty($ret['data'])){
+				$ret['error_type'] = 'email';
+				$ret['msg'] = '该邮箱账号已经被注册';
+				output($ret);
+			}
 			//自检完毕 注册账户
+
 			$ret  =  $this->user->register($email, $nick, $password);
+		
+			if($ret['code']==0){
+				$this->user->setAuth($ret['data']['user_id'],$ret['data']['auth_key']);
+			}
 			output($ret);
 		}
 	

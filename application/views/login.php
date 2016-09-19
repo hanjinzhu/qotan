@@ -18,32 +18,30 @@
             <div class="return_link">
                 <a href="/index"><i class="fa fa-arrow-left"></i>返回</a>
             </div>
-            <form>
-                <div class="section-title">
-                    <h3>账户登陆</h3>
+            <div class="section-title">
+                <h3>账户登陆</h3>
+            </div>
+            <div class="textbox-wrap">
+                <div class="input-prepend">
+                    <span class="add-on"><i class="fa fa-envelope"></i></span>
+                    <input  type="text" class="email" placeholder="请输入电子邮箱" >
                 </div>
-                <div class="textbox-wrap">
-                    <div class="input-prepend">
-                        <span class="add-on"><i class="fa fa-envelope"></i></span>
-                        <input  type="text" class="email" placeholder="请输入电子邮箱" >
-                    </div>
+            </div>
+            <div class="textbox-wrap">
+                <div class="input-prepend">
+                    <span class="add-on"><i class="fa fa-key"></i></span>
+                    <input  type="password" class="password" placeholder="请输入密码">
                 </div>
-                <div class="textbox-wrap">
-                    <div class="input-prepend">
-                        <span class="add-on"><i class="fa fa-key"></i></span>
-                        <input  type="password" class="password" placeholder="请输入密码">
-                    </div>
+            </div>
+            <div class="clearfix login-form-action">
+                <button type="submit" class="pull-right btn btn-success my-btn login_btn">登录</button>
+                <div class="clearfix"></div>
+                <div class="other_login_type">
+                    <span>其他登陆方式：</span>
+                    <a href="" title="新浪微博"><img src="/static/images/web/weibo.png" style="width:22px;"></a>
+                    <a href="" title="腾讯QQ"><img src="/static/images/web/qq.png"></a>
                 </div>
-                <div class="clearfix login-form-action">
-                    <button type="submit" class="pull-right btn btn-success my-btn login_btn">登录</button>
-                    <div class="clearfix"></div>
-                    <div class="other_login_type">
-                        <span>其他登陆方式：</span>
-                        <a href="" title="新浪微博"><img src="/static/images/web/weibo.png" style="width:22px;"></a>
-                        <a href="" title="腾讯QQ"><img src="/static/images/web/qq.png"></a>
-                    </div>
-                </div>
-            </form> 
+            </div>
         </div>
 
         <div class="login-form-section login-form-links">
@@ -62,10 +60,11 @@
         </div>
   </body>
 </html>
+<script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
 <script>
     $(document).ready(function(){
         $(".login_btn").click(function(){
-            $.get("/user/dologin", {email:$(".email").val(),password:$(".password").val()},function(data){
+            $.post("/user/dologin", {email:$(".email").val(),password:$(".password").val()},function(data){
                 if(data['code'] == 0){
                     window.location.href="/home";
                 }else{
