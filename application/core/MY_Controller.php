@@ -1,5 +1,5 @@
 <?php
-class MY_Controller extends Controller{
+class MY_Controller extends CI_Controller{
 	public $userId = 0;
 
     public function __construct(){
