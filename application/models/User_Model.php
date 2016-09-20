@@ -9,6 +9,8 @@ class User_Model extends CI_Model {
     const USER_STATUS_LOCK = 2;
     const USER_STATUS_DELETE = 3;
 
+  
+
     public function __construct()
     {
         parent::__construct();
@@ -26,7 +28,7 @@ class User_Model extends CI_Model {
                 //$ret = $redis->mget($email);
             }
             if(empty($ret)){
-                $sql = "SELECT * FROM lxyd_user_info WHERE id IN (SELECT id FROM lxyd_user WHERE email='$email')";
+                $sql = "SELECT * FROM lxyd_user_info WHERE user_id = (SELECT id FROM lxyd_user WHERE email='$email')";
                 $ret = $this->db->query($sql)->row_array();
             }
             return ['code' => 0, 'msg' => '','data'=>$ret];
@@ -35,13 +37,20 @@ class User_Model extends CI_Model {
     }
 
     public function getUserInfoById($id){
-        if(is_numeric($id)){
-            return ['code' => 0, 'msg' => '邮件格式不正确'];
-        }elseif(is_array($id)){
+        
 
+        if(is_array($id)){
+            $sql = "SELECT * FROM lxyd_user_info WHERE user_id IN (".implode(",",$id).")";
+            $ret = $this->db->query($sql)->result_array();
         }else{
-            return ['code' => 500, 'msg' => '用户信息获取失败'];
+            if($this->cache_lock){
+                //$redis = new Redis();
+                //$ret = $redis->mget($uid);
+            }
+            $sql = "SELECT * FROM lxyd_user_info WHERE user_id = '$id'";
+            $ret = $this->db->query($sql)->row_array();
         }
+        return ['code' => 0, 'msg' => '','data'=>$ret];
     }
     public function register($email, $nick, $password){
         $password = sha1($password);
@@ -49,12 +58,15 @@ class User_Model extends CI_Model {
             'email' => $email,
             'password' => $password,
         ];
-        $userId = $this->db->insert('lxyd_user', $data);
+        $this->db->insert('lxyd_user', $data);
+        $userId = $this->db->insert_id();
         if($userId){
             $data = [
                 'user_id' => $userId,
                 'status' => self::USER_STATUS_UNACTIVE,
                 'nick' => $nick,
+                'verify_code' => substr(md5(time()),0,16),
+                'verify_code_expire' => time()+86400,
                 'create_time' => time(),
             ];
             $this->db->insert('lxyd_user_info', $data);
@@ -97,13 +109,17 @@ class User_Model extends CI_Model {
     }
     public function checkAuth(){
         $this->load->helper('cookie');
-        $authArr = isset(get_cookie['lxyd_sid']) ?  explode("#", base64_decode($_COOKIE['lxyd_sid'])) : false;
+        $salt = $this->config->item('salt');
+        $lxydSid = get_cookie('lxyd_sid');
+        $authArr =explode("#", base64_decode($lxydSid));
         if($authArr){
             if(count($authArr)==5 && is_numeric($authArr[0])){
-                return md5($authArr[0].$authArr[1].$authArr[2].$authArr[3]) == $authArr[4];
+                if(md5($authArr[0].$authArr[1].$authArr[2].$authArr[3]) == $authArr[4]){
+                    return $authArr[0];
+                }
             } 
         }
-        return false;
+        return 0;
     }
 
     public function setAuth($userId, $authKey){
@@ -114,7 +130,7 @@ class User_Model extends CI_Model {
     private function _genAuthKey($userId, $authKey){
         $salt = $this->config->item('salt');
         $timestamp = time(); 
-        $authKeyVal = base64_encode($userId."#".$authKey."#".$timestamp."#".$salt."#".md5($userId.$authKey.$timestamp.$salt));
+        $authKeyVal = base64_encode($userId."#".$authKey."#".$timestamp."#".md5($userId.$authKey.$timestamp.$salt));
         return $authKeyVal;
     }
 
