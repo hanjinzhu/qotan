@@ -5,8 +5,9 @@ class Home extends MY_Controller {
 
 	public function index()
 	{
-		
-		$this->load->view('home');
+		$userInfo = $this->userInfo();
+		$data['userInfo'] = $userInfo['data'];
+		$this->load->view('home', $data);
 	}
 
 	public function register()

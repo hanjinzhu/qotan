@@ -43,7 +43,7 @@
 
             <ul class="nav pull-right">
               <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">雁阵惊寒 <b class="caret"></b></a>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><?php echo $userInfo['nick']?> <b class="caret"></b></a>
                 <ul class="dropdown-menu" style="border-radius:0px;">
                   <li><a href="#">设置</a></li>
                   <li><a href="#">更多收藏方式</a></li>

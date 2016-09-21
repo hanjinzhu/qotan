@@ -65,7 +65,7 @@ class User_Model extends CI_Model {
                 'user_id' => $userId,
                 'status' => self::USER_STATUS_UNACTIVE,
                 'nick' => $nick,
-                'verify_code' => substr(md5(time()),0,16),
+                'verify_code' => substr(md5(time().uniqid()),0,16),
                 'verify_code_expire' => time()+86400,
                 'create_time' => time(),
             ];
@@ -113,8 +113,8 @@ class User_Model extends CI_Model {
         $lxydSid = get_cookie('lxyd_sid');
         $authArr =explode("#", base64_decode($lxydSid));
         if($authArr){
-            if(count($authArr)==5 && is_numeric($authArr[0])){
-                if(md5($authArr[0].$authArr[1].$authArr[2].$authArr[3]) == $authArr[4]){
+            if(is_numeric($authArr[0])){
+                if(md5($authArr[0].$authArr[1].$authArr[2].$salt) == $authArr[3]){
                     return $authArr[0];
                 }
             } 

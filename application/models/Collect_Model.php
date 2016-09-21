@@ -66,6 +66,13 @@ class Collect_Model extends CI_Model {
         return ['code' => 0, 'msg' => '','data'=>$ret];
     }
 
+    //自动提取文章标签
+    public function getCollectTag($article){
+        $this->load->library('TextRank');
+        $rawData = $this->textrank->getTag($article);
+        return $rawData;
+    }
+
     
 
 }

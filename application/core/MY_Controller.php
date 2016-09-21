@@ -13,6 +13,7 @@ class MY_Controller extends CI_Controller{
     	$this->load->model('user_model','user');
         $this->userId = $this->user->checkAuth();
         $this->userInfo = $this->user->getUserInfoById($this->userId);
+        return $this->userInfo;
     }
 }
 ?>
