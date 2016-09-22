@@ -15,8 +15,6 @@
     <link href="/static/css/home.css" rel="stylesheet">
   </head>
   <body>
-  
-
   <div class="navbar  navbar-fixed-top bs-docs-nav">
         <div class="container">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
@@ -45,12 +43,11 @@
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><?php echo $userInfo['nick']?> <b class="caret"></b></a>
                 <ul class="dropdown-menu" style="border-radius:0px;">
+                  <li><a href="#">个人中心</a></li>
                   <li><a href="#">设置</a></li>
                   <li><a href="#">更多收藏方式</a></li>
                   <li class="divider"></li>
-
                   <li><a href="#">退出</a></li>
-
                 </ul>
               </li>
             </ul>
