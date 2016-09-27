@@ -23,19 +23,31 @@ class Collect_Model extends CI_Model {
         $rawData = addslashes($this->htmlextract->getRawText());
         $transData = addslashes($this->htmlextract->getPlainText());
         $title = $this->htmlextract->getTitle();
-        $summary = addslashes(mb_substr(strip_tags($transData), 0, 500)).'...';
-
+        $summary = addslashes(mb_substr(trim(strip_tags($transData)), 0, 800)).'...';
+        $data_id = $this->_isUrlExsists($url);
+        $ctime = time();
+        if(!$data_id){
+            $data = [
+                'title' => $title,
+                'summary' => $summary,
+                'raw_data'=>$rawData,
+                'trans_data'=> $transData,
+                'fetch_url' => $url,
+                'create_time' => $ctime
+            ];
+            $ret = $this->db->insert('lxyd_data', $data);
+            $data_id = $this->db->insert_id();
+        }
         $data = [
             'user_id' => $userId,
-            'title' => $title,
-            'summary' => $summary,
-            'raw_data'=>$rawData,
-            'trans_data'=> $transData,
-            'fetch_url' => $url,
             'platform' => $platform,
-            'create_time' => time()
+            'data_id' => $data_id,
+            'status' => 1,
+            'create_time' => $ctime,
         ];
-        $data_id = $this->db->insert('lxyd_data', $data);
+        $data_id = $this->db->insert('lxyd_collect', $data);
+
+        
         if($data_id){
             return ['code' => 0, 'msg' => '','data'=>['title'=>$title,'summary'=>$summary,'fetch_url'=>$url]];
         }else{
@@ -43,9 +55,9 @@ class Collect_Model extends CI_Model {
         }
     }
 
-    public function getCollectByUserId($userId, $page=1, $limit=12, $catelog_id = 0){
+    public function getCollectByUserId($userId, $page=1, $limit=12){
         $offset = $page - 1;
-        $sql = "SELECT id,title,summary,fetch_url FROM lxyd_data WHERE user_id='$userId' AND  catelog_id='$catelog_id' ORDER BY id DESC LIMIT $offset,$limit";
+        $sql = "SELECT id,title,summary,fetch_url FROM lxyd_data WHERE id=(SELECT data_id FROM lxyd_collect WHERE user_id='$userId' ORDER BY id DESC LIMIT $offset,$limit)";
         $ret = $this->db->query($sql)->result_array();
         foreach($ret as $k => $v){
             $ret[$k]['base_url'] = parse_url($v['fetch_url'], PHP_URL_HOST);
@@ -53,11 +65,8 @@ class Collect_Model extends CI_Model {
         return ['code' => 0, 'msg' => '','data'=>$ret];
     }
 
-    public function getCollectById($id,$userId=0){
+    public function getCollectById($id){
         $sql = "SELECT id,title,trans_data,fetch_url,create_time FROM lxyd_data WHERE id='$id'";
-        if($userId){
-            $sql.=" AND user_id='$userId'";
-        }
         $ret = $this->db->query($sql)->row_array();
         $ret['trans_data'] = stripcslashes($ret['trans_data']);
         if(!$ret){
@@ -66,11 +75,11 @@ class Collect_Model extends CI_Model {
         return ['code' => 0, 'msg' => '','data'=>$ret];
     }
 
-    //自动提取文章标签
-    public function getCollectTag($article){
-        $this->load->library('TextRank');
-        $rawData = $this->textrank->getTag($article);
-        return $rawData;
+
+    private function _isUrlExsists($url){
+        $sql = "SELECT id FROM lxyd_data WHERE fetch_url='$url'";
+        $ret = $this->db->query($sql)->row_array();
+        return isset($ret['id']) ? $ret['id'] : 0;
     }
 
     

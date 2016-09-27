@@ -4,6 +4,9 @@ body {
 a {
     color: #2bbbb2;
 }
+.media {
+    padding: 10px 0px;
+}
 .navbar .nav li.dropdown>.dropdown-toggle .caret {
     border-top-color: #fff;
     border-bottom-color: #fff;
