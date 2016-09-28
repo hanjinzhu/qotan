@@ -76,6 +76,7 @@ class Collect_Model extends CI_Model {
     }
 
 
+
     private function _isUrlExsists($url){
         $sql = "SELECT id FROM lxyd_data WHERE fetch_url='$url'";
         $ret = $this->db->query($sql)->row_array();
