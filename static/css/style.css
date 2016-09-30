@@ -94,9 +94,11 @@ a {
     background-repeat: no-repeat;
 }
 .input-prepend{
-    border: 1px solid #e0e0e0;
+    width:600px;
+    border: 2px solid #17c8bf;
     background-color: #ffffff;
     display: block;
+    margin:0px auto;
 }
 
 .input-prepend input,.input-prepend input:focus,.input-prepend .add-on{
@@ -128,4 +130,22 @@ form{
 }
 input, button, select, textarea {
     font-family:  "Microsoft YaHei",Georgia,"Merriweather","PT Serif","Times New Roman",serif;
+}
+.catelog_select .label {padding:6px 12px;margin: 10px;cursor:pointer}
+.catelog_select{
+    text-align:left;border:2px dashed #dfe3e4;padding:20px;color:#999;background-color: #fff;
+}
+.caltelog_select_sub{
+    font-size: 18px;
+}
+
+.label-success, .badge-success {
+    background-color: #2bbbb2;
+}
+.label-info, .badge-info {
+    background-color: #90ceca;
+}
+.green-btn{
+    background-color: #2bbbb2;
+    color: #FFF;
 }

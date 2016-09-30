@@ -1,13 +1,15 @@
 <?php
 $this->load->view('common/header');
 ?>
-<div class="container" style="margin-top:80px;">
-
-    <div class="input-prepend">
-        <span class="add-on"><i class="fa fa-link"></i></span>
-        <input  type="text" placeholder="http://" style="width:82%" class="submit_url_input">
-        <button type="submit" class="btn btn-success pull-right green-btn submit_url_button">提交网址收录</button>
+<div class="container" style="margin-top:70px;">
+    <div class="container" style="margin-bottom:20px;">
+        <div class="input-prepend" >
+            <span class="add-on"><i class="fa fa-link"></i></span>
+            <input  type="text" placeholder="http://" class="submit_url_input" style="width:445px;">
+            <button type="submit" class="pull-right green-btn submit_url_button">提交网址收录</button>
+        </div>
     </div>
+
     <div id="item_box">
         
     </div>

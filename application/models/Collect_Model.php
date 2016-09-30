@@ -57,7 +57,7 @@ class Collect_Model extends CI_Model {
 
     public function getCollectByUserId($userId, $page=1, $limit=12){
         $offset = $page - 1;
-        $sql = "SELECT id,title,summary,fetch_url FROM lxyd_data WHERE id=(SELECT data_id FROM lxyd_collect WHERE user_id='$userId' ORDER BY id DESC LIMIT $offset,$limit)";
+        $sql = "SELECT id,title,summary,fetch_url FROM lxyd_data WHERE id IN (SELECT data_id FROM lxyd_collect WHERE user_id='$userId') ORDER BY id DESC  LIMIT $offset,$limit";
         $ret = $this->db->query($sql)->result_array();
         foreach($ret as $k => $v){
             $ret[$k]['base_url'] = parse_url($v['fetch_url'], PHP_URL_HOST);
@@ -71,6 +71,15 @@ class Collect_Model extends CI_Model {
         $ret['trans_data'] = stripcslashes($ret['trans_data']);
         if(!$ret){
             return ['code' => 100, 'msg' => '请求数据不存在','data'=>$ret];
+        }
+        return ['code' => 0, 'msg' => '','data'=>$ret];
+    }
+
+    public function getCollectByIds($ids){
+        $sql = "SELECT id,title,trans_data,fetch_url,create_time,summary FROM lxyd_data WHERE id IN (".implode(",", $ids).")";
+        $ret = $this->db->query($sql)->result_array();
+        foreach($ret as $k => $v){
+            $ret[$k]['trans_data'] = stripcslashes($v['trans_data']);
         }
         return ['code' => 0, 'msg' => '','data'=>$ret];
     }

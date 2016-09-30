@@ -24,8 +24,13 @@ class Explore_Model extends CI_Model {
     }
 
     public function getMyExploreCatelog($userId){
-        
-        $sql = "SELECT id FROM lxyd_explore_like WHERE user_id='$userId'";
+        $sql = "SELECT catelog_id FROM lxyd_explore_like WHERE user_id='$userId'";
+        $ret = $this->db->query($sql)->result_array();
+        return ['code' => 0, 'msg' => '','data'=>$ret];
+    }
+
+    public function getAllExploreCatelog(){
+        $sql = "SELECT id,name FROM lxyd_catelog ORDER BY sort DESC";
         $ret = $this->db->query($sql)->result_array();
         return ['code' => 0, 'msg' => '','data'=>$ret];
     }

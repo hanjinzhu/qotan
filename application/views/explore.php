@@ -1,53 +1,81 @@
 <?php
 $this->load->view('common/header');
 ?>
-<div class="container" style="margin-top:80px;">
-<div class="row">
-  <div class="span9">
-            <div class="media">
-              <a class="pull-left" href="#">
-                <img class="media-object" data-src="holder.js/64x64" alt="64x64" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAABkElEQVR4Xu2YMY6EMAxFEwlKahp6qLn/GajhCDQ0lCCxSlZZZS1ARGSYSLypYCay459vPwY9TdOmXvzRCIADaAFmwItnoGIIQgEoAAWgABR4sQJgEAyCQTAIBl8MAf4MgUEwCAbBIBgEgy9WAAzGwOA8z6rrOrUsi/VSnueqbVtVFIW9d7+ba/97abxYcUIMfdsBfnFN06i+721+V6hflBTG32isOCHFm7VRBZCn64oqy1KN4/hPmKPT33NJSJyvCeDs77eAuTat4QtQ17UahsG2S1VVVhhznWWZ3fu6rn81OMfsxTlrpRARojvAbXbbfh8vtNZKtsaZMM4BV+K4GRNSsFz7MQFMIv+0XWJ5qrLgvfuzOHdF+KgAchDK4vZa40gQU+hVmoQ44rYAJtlVfMle92eAcYY86SOcmjhnRHlcgJCEqa2N4oDUigrZDwLEeBQOUTy1tTgAB/BOkHeCvBNMbTI/uR8oAAWgABSAAk9O3dRyQQEoAAWgABRIbTI/uR8oAAWgABSAAk9O3dRy/QDwoQCf5JU+PwAAAABJRU5ErkJggg==" style="width: 50px; height: 50px;">
-              </a>
-              <div class="media-body">
-                <h4 class="media-heading">Media heading</h4>
-                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-              </div>
-              <div class="media-body" style="padding-left:60px;margin-top:8px;">
-                <span class="label label-success">Http</span>
-                <span class="label label-success">计算机技术</span>
-                <span class="label label-success">文本分析</span>
-                <ul class="inline pull-right" style="display:inline;">
-                  <li class="action_favorite" title="收藏到我的阅读"><a href=""><i class="fa fa-star-o"></i> 收藏到我的阅读</a></li>
-                  <li class="action_share" title="分享"><a href=""><i class="fa fa-share"></i>分享</a></li>
-                </ul>
-              </div>
-            </div>
-            <div class="media">
-              <a class="pull-left" href="#">
-                <img class="media-object" data-src="holder.js/64x64" alt="64x64" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAABkElEQVR4Xu2YMY6EMAxFEwlKahp6qLn/GajhCDQ0lCCxSlZZZS1ARGSYSLypYCay459vPwY9TdOmXvzRCIADaAFmwItnoGIIQgEoAAWgABR4sQJgEAyCQTAIBl8MAf4MgUEwCAbBIBgEgy9WAAzGwOA8z6rrOrUsi/VSnueqbVtVFIW9d7+ba/97abxYcUIMfdsBfnFN06i+721+V6hflBTG32isOCHFm7VRBZCn64oqy1KN4/hPmKPT33NJSJyvCeDs77eAuTat4QtQ17UahsG2S1VVVhhznWWZ3fu6rn81OMfsxTlrpRARojvAbXbbfh8vtNZKtsaZMM4BV+K4GRNSsFz7MQFMIv+0XWJ5qrLgvfuzOHdF+KgAchDK4vZa40gQU+hVmoQ44rYAJtlVfMle92eAcYY86SOcmjhnRHlcgJCEqa2N4oDUigrZDwLEeBQOUTy1tTgAB/BOkHeCvBNMbTI/uR8oAAWgABSAAk9O3dRyQQEoAAWgABRIbTI/uR8oAAWgABSAAk9O3dRy/QDwoQCf5JU+PwAAAABJRU5ErkJggg==" style="width: 50px; height: 50px;">
-              </a>
-              <div class="media-body">
-                <h4 class="media-heading"><a href="">Media heading</a></h4>
-                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-              </div>
-            </div>
-            <div class="media">
-              <a class="pull-left" href="#">
-                <img class="media-object" data-src="holder.js/64x64" alt="64x64" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAABkElEQVR4Xu2YMY6EMAxFEwlKahp6qLn/GajhCDQ0lCCxSlZZZS1ARGSYSLypYCay459vPwY9TdOmXvzRCIADaAFmwItnoGIIQgEoAAWgABR4sQJgEAyCQTAIBl8MAf4MgUEwCAbBIBgEgy9WAAzGwOA8z6rrOrUsi/VSnueqbVtVFIW9d7+ba/97abxYcUIMfdsBfnFN06i+721+V6hflBTG32isOCHFm7VRBZCn64oqy1KN4/hPmKPT33NJSJyvCeDs77eAuTat4QtQ17UahsG2S1VVVhhznWWZ3fu6rn81OMfsxTlrpRARojvAbXbbfh8vtNZKtsaZMM4BV+K4GRNSsFz7MQFMIv+0XWJ5qrLgvfuzOHdF+KgAchDK4vZa40gQU+hVmoQ44rYAJtlVfMle92eAcYY86SOcmjhnRHlcgJCEqa2N4oDUigrZDwLEeBQOUTy1tTgAB/BOkHeCvBNMbTI/uR8oAAWgABSAAk9O3dRyQQEoAAWgABRIbTI/uR8oAAWgABSAAk9O3dRy/QDwoQCf5JU+PwAAAABJRU5ErkJggg==" style="width: 50px; height: 50px;">
-              </a>
-              <div class="media-body">
-                <h4 class="media-heading">Media heading</h4>
-                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-              </div>
-            </div>
+
+  <div class="container catelog_select" style="margin-top:80px;<?php if(!$myLikeCatelog):?>display:block;<?php endif;?>">
+      <p class="caltelog_select_sub">选取您感兴趣的分类，系统会根据您的选择做出文章推荐</p>
+      <div> 
+        <?php foreach($allCatelog as $v):?>
+        <span class="label <?php if(in_array($v['id'], $likeCatelogId)):?>label-success<?php else:?>label-default<?php endif;?>" data-id="<?php echo $v['id']?>">
+          <?php echo $v['name']?>
+          <?php if(in_array($v['id'], $likeCatelogId)):?> <i class="fa fa-check" ></i><?php endif;?>
+        </span>
+        <?php endforeach;?>
+      </div>
+      <div class="clearfix">
+        <button class="btn btn-primary" type="button" style="margin:10px;">๑❛ᴗ❛๑ 提交选择</button>
+      </div>
   </div>
-  <div class="span3">...</div>
-  
-</div>
-             
+<?php if($myLikeCatelog):?>
+<div class="container" style="margin-top:80px;">
+  <div class="row">
+    <div class="span9">
+    <?php if(empty($collect)):?>
+
+    <?php else:?>
+      <?php foreach($collect as $v):?>
+        <div class="media">
+          <a class="pull-left" href="#">
+            <img class="media-object"  alt="64x64" src="  " style="width: 50px; height: 50px;">
+          </a>
+          <div class="media-body">
+            <h4 class="media-heading"><a href=""><?php echo $v['title']?></a></h4>
+            <?php echo $v['summary']?>
+          </div>
+          <div class="media-body" style="padding-left:60px;margin-top:8px;">
+            <span class="label label-success">Http</span>
+            <span class="label label-success">计算机技术</span>
+            <span class="label label-success">文本分析</span>
+            <ul class="inline pull-right" style="display:inline;">
+              <li class="action_favorite" title="收录到我的阅读"><a href=""><i class="fa fa-star-o"></i> 收录到我的阅读</a></li>
+              <li class="action_share" title="分享"><a href=""><i class="fa fa-share"></i>分享</a></li>
+            </ul>
+          </div>
+      </div>
+      <?php endforeach;?>
+    <?php endif;?>
+      </div>
+    <div class="span3">...</div>
+  </div>
+<?php endif;?>        
 </div>
 
 <?php
 $this->load->view('common/footer');
 ?>
 
+<script>
+  $(document).ready(function(){
+    $(".label-default.label").hover(
+      function(){
+        $(this).addClass("label-info");
+        $(this).removeClass("label-default");
+      },
+      function(){
+        $(this).removeClass("label-info");
+        $(this).addClass("label-default");
+      }
+    );
+    $(".label").click(function(){
+      if($(this).hasClass("label-success")){
+        $(this).find(".fa-check").remove();
+        $(this).removeClass("label-success");
+      }else{
+        $(this).append(' <i class="fa fa-check" ></i>');
+        $(this).addClass("label-success");
+        $(this).removeClass("label-info");
+        $(this).removeClass("label-default");
+      }
+    });
+  });
+</script>

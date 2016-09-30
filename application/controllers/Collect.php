@@ -21,7 +21,6 @@ class Collect extends CI_Controller {
 
 	public function getCollectDetail(){
 		$id = $this->input->get('id');
-		$user_id =1024;
 		$this->load->model('collect_model','collect');
 		$ret = $this->collect->getCollectById($id);
 		if($ret['code']){

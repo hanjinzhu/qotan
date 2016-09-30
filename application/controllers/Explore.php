@@ -6,20 +6,29 @@ class Explore extends MY_Controller {
 	public function index()
 	{
 		$this->load->model('explore_model','explore');
+		$this->load->model('collect_model','collect');
 		$userInfo = $this->userInfo();
-		$likeCatelog = $this->explore->getMyExploreCatelog($this->userId);
-	
-		if(empty($likeCatelog['data'])){
+		$myCatelog = $this->explore->getMyExploreCatelog($this->userId);
+		$allCatelogInfo = $this->explore->getAllExploreCatelog();
+		$allCatelog = $allCatelogInfo['data'];
+		$myCatelogId = $myCatelog['data'];
+		//$myCatelogId = [];
+		if(count($myCatelogId) ==0){
+			$likeCatelogId = [];
+			$myLikeCatelog = false;
 			$collect = [];
 		}else{
-			$likeCatelogId = array_map(function($row){return $row['id'];},$likeCatelog['data']);
+			$myLikeCatelog = true;
+			$likeCatelogId = array_map(function($row){return $row['catelog_id'];},$myCatelogId);
 			$ret = $this->explore->getCollectByCatelogId($likeCatelogId);
-			$collect = $ret['data'];
-
+			$collectIds = $ret['data'];
+			$collectInfo = $this->collect->getCollectByIds($collectIds);
+			$collect = $collectInfo['data'];
 		}
-		
+		$data['likeCatelogId'] = $likeCatelogId;
+		$data['allCatelog'] = $allCatelog;
+		$data['myLikeCatelog'] = $myLikeCatelog;
 		$data['userInfo'] = $userInfo['data'];
-		$data['likeCatelog'] = $likeCatelog;
 		$data['collect'] = $collect;
 		$this->load->view('explore', $data);
 	}
