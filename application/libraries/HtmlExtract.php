@@ -238,6 +238,7 @@ class HtmlExtract {
         switch ($this->platform) {
             case '1':
                 $styleString='<meta content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport" />';
+                $styleString.='<title><?php echo $this->title?></title>';
                 $styleString.='<link rel="stylesheet" type="text/css" href="/static/css/normalize.css" />';
                 $styleString.='<link rel="stylesheet" type="text/css" href="/static/css/medusa_pc.css" />';
                 break;

@@ -19,11 +19,12 @@ class Collect_Model extends CI_Model {
         if(!$userId){
             return ['code' => 101, 'msg' => '用户信息解析错误，请重新登录再试'];
         }
+        $baseUrl = parse_url($url, PHP_URL_HOST);
         $this->load->library('htmlExtract',['url' => $url,'platform'=>$platform]);
         $rawData = addslashes($this->htmlextract->getRawText());
         $transData = addslashes($this->htmlextract->getPlainText());
         $title = $this->htmlextract->getTitle();
-        $summary = addslashes(mb_substr(trim(strip_tags($transData)), 0, 800)).'...';
+        $summary = addslashes(mb_substr(trim(strip_tags($transData)), 0, 150));
         $data_id = $this->_isUrlExsists($url);
         $ctime = time();
         if(!$data_id){
@@ -38,6 +39,12 @@ class Collect_Model extends CI_Model {
             $ret = $this->db->insert('lxyd_data', $data);
             $data_id = $this->db->insert_id();
         }
+
+        //用户已经收录情况判断
+        $collectId = $this->_isCollect($data_id, $userId);
+        if($collectId){
+            return ['code' => 201, 'msg' => '您已经收入过这篇文章了'];
+        }
         $data = [
             'user_id' => $userId,
             'platform' => $platform,
@@ -49,7 +56,7 @@ class Collect_Model extends CI_Model {
 
         
         if($data_id){
-            return ['code' => 0, 'msg' => '','data'=>['title'=>$title,'summary'=>$summary,'fetch_url'=>$url]];
+            return ['code' => 0, 'msg' => '','data'=>['title'=>$title,'summary'=>$summary,'fetch_url'=>$url, 'base_url'=>$baseUrl]];
         }else{
             return ['code' => 500, 'msg' => '系统错误，请稍后再试'];
         }
@@ -88,6 +95,12 @@ class Collect_Model extends CI_Model {
 
     private function _isUrlExsists($url){
         $sql = "SELECT id FROM lxyd_data WHERE fetch_url='$url'";
+        $ret = $this->db->query($sql)->row_array();
+        return isset($ret['id']) ? $ret['id'] : 0;
+    }
+
+    private function _isCollect($id, $userId){
+        $sql = "SELECT id FROM lxyd_collect WHERE data_id='$id' AND user_id='$user_id'";
         $ret = $this->db->query($sql)->row_array();
         return isset($ret['id']) ? $ret['id'] : 0;
     }

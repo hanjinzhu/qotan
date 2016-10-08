@@ -27,7 +27,7 @@ $(document).ready(function(){
                             '<ul class="clearfix inline item_raw_link">'+
                                 '<li ><a class="original_url" href="{fetch_url}" target="_blank" title="查看原始文档">{base_url}</a></li>'+
                             '</ul>'+
-                            '<ul class="inline item_action">'+
+                            '<ul class="inline item_action" style="display:none;">'+
                                 '<li class="action_share" title="分享"><i class="fa fa-share"></i></li>'+
                                 '<li class="action_mark" title="移动"><i class="fa fa-files-o"></i></li>'+
                                 '<li class="action_delete" title="删除"><i class="fa fa-trash"></i></li>'+
@@ -45,13 +45,37 @@ $(document).ready(function(){
             });
         }
         $("#item_box").html(temp_tpl);    
+        $(".item").hover(
+          function(){
+            $(this).find(".item_action").show();
+          },
+          function(){
+            $(this).find(".item_action").hide();
+          }
+        );
     },"json");
+
+    $(".item").hover(
+      function(){
+        $(this).find(".item_action").show();
+      },
+      function(){
+        $(this).find(".item_action").hide();
+      }
+    );
+
     $(".submit_url_button").click(function(){
         var url = $(".submit_url_input").val();
         if(url){
             $.post("/collect/collecturl", {url:url},function(data){
                 if(data['code'] == 0){
-                    alert("success");
+                    temp_tpl = '';
+                    var append_data = data['data'];
+                    console.log(append_data);
+                    temp_tpl = item_tpl.replace(/\{\w+\}/g, function(m) {
+                        return append_data[m.substring(1, m.length-1)];
+                    });
+                    $("#item_box").prepend(temp_tpl);
                 }else{
                     alert("fail");
                 }
