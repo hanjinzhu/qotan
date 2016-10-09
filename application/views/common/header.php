@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="renderer" content="webkit">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>数据库查询</title>
+    <title><?php echo $title?> - 离线阅读神器 阅读更轻松</title>
     <script src="/static/js/jquery.min.js"></script>
     <script src="/static/js/bootstrap.min.js"></script>
     <link href="/static/css/bootstrap.min.css" rel="stylesheet">
