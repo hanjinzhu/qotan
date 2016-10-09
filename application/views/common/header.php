@@ -43,8 +43,7 @@
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><?php echo $userInfo['nick']?> <b class="caret"></b></a>
                 <ul class="dropdown-menu" style="border-radius:0px;">
-                  <li><a href="#">个人中心</a></li>
-                  <li><a href="#">设置</a></li>
+                  <li><a href="/user/ucenter">个人中心</a></li>
                   <li><a href="#">更多收藏方式</a></li>
                   <li class="divider"></li>
                   <li><a href="#">退出</a></li>
