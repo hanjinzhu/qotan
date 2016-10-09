@@ -91,8 +91,12 @@ class User extends MY_Controller {
 			}
 			output($ret);
 		}
-	
+	}
 
+	public function ucenter(){
+		$userInfo = $this->userInfo();
+		$data['userInfo'] = $userInfo['data'];
+		$this->load->view('ucenter',$data);
 	}
 
 }

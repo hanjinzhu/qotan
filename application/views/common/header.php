@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="renderer" content="webkit">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>数据库查询</title>
+    <title><?php echo $title?> - 离线阅读神器 阅读更轻松</title>
     <script src="/static/js/jquery.min.js"></script>
     <script src="/static/js/bootstrap.min.js"></script>
     <link href="/static/css/bootstrap.min.css" rel="stylesheet">
@@ -43,8 +43,7 @@
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><?php echo $userInfo['nick']?> <b class="caret"></b></a>
                 <ul class="dropdown-menu" style="border-radius:0px;">
-                  <li><a href="#">个人中心</a></li>
-                  <li><a href="#">设置</a></li>
+                  <li><a href="/user/ucenter">个人中心</a></li>
                   <li><a href="#">更多收藏方式</a></li>
                   <li class="divider"></li>
                   <li><a href="#">退出</a></li>
