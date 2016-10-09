@@ -76,6 +76,10 @@ a {
         display: block;
     }
 }
+.nav-tabs>li>a {
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+}
 .navbar-toggle .icon-bar {
     display: block;
     width: 22px;
@@ -148,4 +152,51 @@ input, button, select, textarea {
 .green-btn{
     background-color: #2bbbb2;
     color: #FFF;
+}
+.white_pannel{
+    padding:20px;background-color:#FFF;
+}
+.ucenter_avatar{
+    width:100px;height:100px;float:left;margin-right:20px;
+}
+.ucenter_fans{
+    float: right;line-height: 30px;margin-top: 15px; margin-left: 15px;list-style: none;
+}
+.ucenter_fans li{
+    float: left;
+    line-height: 30px;
+    margin-right: 20px;
+    font-size: 14px;
+    text-align: center
+}
+.ucenter_fans li a{
+    color:#666;
+}
+.ucenter_fans li a:hover {
+    text-decoration: none;
+    color:#2bbbb2;
+}
+.left_ucenter_intro p{
+    margin: 0 0 6px;
+}
+.num{
+    color: #2bbbb2;
+    font-family: Constantia,Georgia;
+    font-size: 20px;
+}
+.self_intro{
+    font-size: 12px;
+    color: #999;
+}
+.ucenter_nick{
+    font-size:18px;font-weight:bold;
+}
+.ucenter_nick a{
+    margin-left: 10px;
+    font-weight:normal;
+    font-size:12px;
+    text-decoration: underline;
+}
+.ucenter_divider{
+    margin:0px 20px;color:#eee
 }
