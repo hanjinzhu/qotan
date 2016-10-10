@@ -98,13 +98,7 @@ a {
     background-position: 50% 100%;
     background-repeat: no-repeat;
 }
-.search-input-prepend{
-    width:600px;
-    border: 2px solid #17c8bf;
-    background-color: #ffffff;
-    display: block;
-    margin:0px auto;
-}
+
 .input-prepend{
     border: 1px solid #9bd6a5;
     background-color: #ffffff;
@@ -134,6 +128,13 @@ input[type="text"], input[type="password"]{
 .input-prepend .add-on {
     margin-top: 4px;
     margin-left: 6px;
+}
+#search-input{
+    width: 600px;
+    border: 2px solid #17c8bf;
+    background-color: #ffffff;
+    display: block;
+    margin: 0px auto;
 }
 form{
     margin:0px;
