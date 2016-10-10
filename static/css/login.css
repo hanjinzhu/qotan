@@ -1,12 +1,6 @@
 .login_bg{
-    background-color: #2bbbb2;
-    background-image: -ms-radial-gradient(center , circle farthest-side, #68d6cf 0%, #2bbbb2  100%);
-    background-image: -moz-radial-gradient(center , circle farthest-side, #68d6cf 0%, #2bbbb2  100%);
-    background-image: -o-radial-gradient(center , circle farthest-side, #68d6cf 0%, #2bbbb2  100%);
-    background-image: -webkit-gradient(radial, center , 0, center , 487, color-stop(0, #68d6cf), color-stop(1, #2bbbb2 ));
-    background-image: -webkit-radial-gradient(center , circle farthest-side, #68d6cf 0%, #2bbbb2  100%);
-    background-image: radial-gradient(circle farthest-side at center , #68d6cf  0%, #2bbbb2  100%);
-    padding: 200px 0;
+    background-color: #f7f9fa;
+    padding: 40px 0;
     min-height: 100%;
     overflow: hidden;
     -moz-background-size: cover;
@@ -14,24 +8,14 @@
     -webkit-background-size: cover;
     background-size: cover;
     position: relative;
-    -o-box-shadow: inset 0 3px 3px -3px rgba(0, 0, 0, 0.3);
-    -ms-box-shadow: inset 0 3px 3px -3px rgba(0, 0, 0, 0.3);
-    -moz-box-shadow: inset 0 3px 3px -3px rgba(0, 0, 0, 0.3);
-    -webkit-box-shadow: inset 0 3px 3px -3px rgba(0, 0, 0, 0.3);
-    box-shadow: inset 0 3px 3px -3px rgba(0, 0, 0, 0.3);
     font-family:  "Microsoft YaHei",Georgia,"Merriweather","PT Serif","Times New Roman",serif;
 }
 .login-form-section{
 	color: #95a5a6;
     width: 100%;
-    max-width: 400px;
-    margin: 0 auto;
+    max-width: 300px;
     background-color: white;
-    -o-box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
-    -ms-box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
-    -moz-box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
-    -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
-    box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+    border:1px solid #e8e8e8;
 }
 
 .remember_me {margin-top: 12px;}
@@ -46,6 +30,7 @@
     background-color: white;
 }
 .section-title h3 {
+    font-size: 18.5px;
     font-weight: 500;
     line-height: 1.1;
     color: #2ecc71;

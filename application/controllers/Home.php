@@ -11,6 +11,7 @@ class Home extends MY_Controller {
 			redirect(base_url('/'));
 		}
 		$data['userInfo'] = $userInfo['data'];
+		$data['title'] = "我的收录";
 		$this->load->view('home', $data);
 	}
 

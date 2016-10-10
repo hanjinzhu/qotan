@@ -86,6 +86,7 @@ a {
     height: 2px;
     border-radius: 1px;
 }
+
 .color-line {
     background: #f7f9fa;
     height: 3px;
@@ -97,14 +98,19 @@ a {
     background-position: 50% 100%;
     background-repeat: no-repeat;
 }
-.input-prepend{
+.search-input-prepend{
     width:600px;
     border: 2px solid #17c8bf;
     background-color: #ffffff;
     display: block;
     margin:0px auto;
 }
-
+.input-prepend{
+    border: 1px solid #9bd6a5;
+    background-color: #ffffff;
+    display: block;
+    margin:0px auto;
+}
 .input-prepend input,.input-prepend input:focus,.input-prepend .add-on{
     box-shadow: none;
     outline: none;
@@ -154,7 +160,7 @@ input, button, select, textarea {
     color: #FFF;
 }
 .white_pannel{
-    padding:20px;background-color:#FFF;
+    padding:20px;background-color:#FFF;border:1px solid #e8e8e8;
 }
 .ucenter_avatar{
     width:100px;height:100px;float:left;margin-right:20px;
