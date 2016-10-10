@@ -22,7 +22,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="brand" href="./index.html">离线阅读神器</a>
+          <a class="brand" href="/">离线阅读神器</a>
           <div class="nav-collapse collapse">
             <ul class="nav">
               <li <?php if($this->router->class == 'home'):?>class="active"<?php endif;?>>
@@ -46,7 +46,7 @@
                   <li><a href="/user/ucenter">个人中心</a></li>
                   <li><a href="#">更多收藏方式</a></li>
                   <li class="divider"></li>
-                  <li><a href="#">退出</a></li>
+                  <li><a href="/user/logout">退出</a></li>
                 </ul>
               </li>
             </ul>

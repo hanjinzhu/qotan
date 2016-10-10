@@ -25,6 +25,7 @@ class Explore extends MY_Controller {
 			$collectInfo = $this->collect->getCollectByIds($collectIds);
 			$collect = $collectInfo['data'];
 		}
+		$data['title'] = "发现更多优质文章";
 		$data['likeCatelogId'] = $likeCatelogId;
 		$data['allCatelog'] = $allCatelog;
 		$data['myLikeCatelog'] = $myLikeCatelog;

@@ -9,6 +9,7 @@ class User extends MY_Controller {
 	}
 
 	public function register(){
+		$data['title'] = "账户注册";
 		$this->load->view('register');
 	}
 
@@ -96,7 +97,15 @@ class User extends MY_Controller {
 	public function ucenter(){
 		$userInfo = $this->userInfo();
 		$data['userInfo'] = $userInfo['data'];
+		$data['title'] = "个人中心";
 		$this->load->view('ucenter',$data);
+	}
+
+	public function logout(){
+		$this->load->helper('url');
+		$this->load->helper('cookie');
+		delete_cookie("lxyd_sid");
+		redirect(base_url('/'));
 	}
 
 }

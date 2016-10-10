@@ -13,7 +13,7 @@ $this->load->view('common/header');
         <?php endforeach;?>
       </div>
       <div class="clearfix">
-        <button class="btn btn-primary" type="button" style="margin:10px;">๑❛ᴗ❛๑ 提交选择</button>
+        <button class="red-btn explore-btn" type="button" style="margin:10px;">๑❛ᴗ❛๑ 提交选择</button>
       </div>
   </div>
 <?php if($myLikeCatelog):?>

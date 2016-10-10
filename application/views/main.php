@@ -40,12 +40,20 @@
                             </div>
                         </div>
                         <div class="clearfix login-form-action">
-                            <button type="submit" class="pull-right btn btn-success my-btn login_btn">登录</button>
+                            <button type="submit" class="pull-right green-btn submit_login_button login_btn">登录</button>
                             <div class="clearfix"></div>
                             <div class="other_login_type">
                                 <span>其他登陆方式：</span>
-                                <a href="" title="新浪微博"><img src="/static/images/web/weibo.png" style="width:22px;"></a>
-                                <a href="" title="腾讯QQ"><img src="/static/images/web/qq.png"></a>
+                                <a href="" title="新浪微博">新浪微博</a>
+                                <a href="" title="腾讯QQ">腾讯QQ</a>
+                            </div>
+                            <div class="app-btn-wrap">
+                                <button type="submit" class="pull-left pink-btn app-btn">
+                                    <i class="fa fa-apple" aria-hidden="true" style="font-size:18px;"></i> 苹果版下载
+                                </button>
+                                <button type="submit" class="pull-right pink-btn app-btn">
+                                    <i class="fa fa-android" aria-hidden="true" style="font-size:18px;"></i> 安卓版下载
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -53,14 +61,14 @@
                     <div class="login-form-section login-form-links">
                         <div class="textbox-wrap">
                             <h4>我还没有账号?</h4>
-                            <a href="/user/register" class="blue">点击此处链接</a>
+                            <a href="/user/register">点击此处链接</a>
                             <span>去注册账号</span>
                         </div>
                     </div>
                     <div class="login-form-section login-form-links">
                         <div class="textbox-wrap">
                             <h4>我忘记了密码?</h4>
-                            <a href="/user/forget_password" class="green">点击此处链接</a>
+                            <a href="/user/forget_password">点击此处链接</a>
                             <span>去找回密码</span>
                         </div>
                     </div>

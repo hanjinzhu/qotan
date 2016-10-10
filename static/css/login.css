@@ -17,7 +17,10 @@
     background-color: white;
     border:1px solid #e8e8e8;
 }
-
+.submit_login_button{
+   padding: 7px 116px;
+   border: none;
+}
 .remember_me {margin-top: 12px;}
 .other_login_type{
     margin-top:20px;
@@ -33,7 +36,7 @@
     font-size: 18.5px;
     font-weight: 500;
     line-height: 1.1;
-    color: #2ecc71;
+    color: #2bbbb2;
 }
 .textbox-wrap h4 {
     font-weight: 300;
@@ -59,14 +62,9 @@
 }
 
 .login-form-action {
-    padding: 15px 20px 30px 20px;
+    padding: 15px 20px 20px 20px;
 }
-.login-form-section .green {
-    color: #2ecc71;
-}
-.login-form-section .blue {
-    color: #3498db;
-}
+
 
 .login-form-action .green-btn{
     border-radius: 0;
@@ -83,4 +81,11 @@
 }
 .register_success_info a{
     color:#fff;text-decoration: underline;
+}
+.app-btn {
+    padding: 7px 16px;
+    border: none;
+}
+.app-btn-wrap{
+    margin-top: 10px;
 }

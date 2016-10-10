@@ -98,9 +98,11 @@ a {
     background-position: 50% 100%;
     background-repeat: no-repeat;
 }
+.theme-color{color:#2bbbb2;}
+.normal-color{color:#313131;}
 
 .input-prepend{
-    border: 1px solid #9bd6a5;
+    border: 1px solid #a8d6d3;
     background-color: #ffffff;
     display: block;
     margin:0px auto;
@@ -112,12 +114,7 @@ a {
     border: none;
 }
 
-.my-btn{
-    border-radius: 0;
-    box-shadow: none;
-    border: none;
-    min-width: 100px;
-}
+
 [class^="icon-"], [class*=" icon-"] {
     vertical-align: inherit;
 }
@@ -159,6 +156,18 @@ input, button, select, textarea {
 .green-btn{
     background-color: #2bbbb2;
     color: #FFF;
+}
+.pink-btn{
+    background-color: #d86363;
+    color: #FFF;
+}
+.red-btn{
+    background-color:#d67756;
+    color: #FFF;
+}
+.explore-btn {
+    padding: 7px 16px;
+    border: none;
 }
 .white_pannel{
     padding:20px;background-color:#FFF;border:1px solid #e8e8e8;
