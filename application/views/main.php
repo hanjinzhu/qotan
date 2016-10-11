@@ -80,7 +80,7 @@
 <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
 <script>
     $(document).ready(function(){
-        $(".login_btn").click(function(){
+        $(".login_btn").unbind("click").click(function(){
             $.post("/user/dologin", {email:$(".email").val(),password:$(".password").val()},function(data){
                 if(data['code'] == 0){
                     window.location.href="/home";

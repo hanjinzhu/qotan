@@ -128,7 +128,7 @@ input[type="text"], input[type="password"]{
 }
 #search-input{
     width: 600px;
-    border: 2px solid #17c8bf;
+    border: 2px solid #2bbbb2;
     background-color: #ffffff;
     display: block;
     margin: 0px auto;
