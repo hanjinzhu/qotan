@@ -100,7 +100,7 @@ class Collect_Model extends CI_Model {
     }
 
     private function _isCollect($id, $userId){
-        $sql = "SELECT id FROM lxyd_collect WHERE data_id='$id' AND user_id='$user_id'";
+        $sql = "SELECT id FROM lxyd_collect WHERE data_id='$id' AND user_id='$userId'";
         $ret = $this->db->query($sql)->row_array();
         return isset($ret['id']) ? $ret['id'] : 0;
     }
