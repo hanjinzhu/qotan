@@ -216,3 +216,6 @@ input, button, select, textarea {
 .ucenter_divider{
     margin:0px 20px;color:#eee
 }
+.media-heading{
+    font-size: 16px;
+}

@@ -23,7 +23,7 @@ $(document).ready(function(){
     var item_tpl =  '<div class="item">'+
                         '<div class="item_content">'+
                             '<a href="/collect/getcollectdetail?id={id}"><h5>{title}</h5></a>'+
-                            '<div>{summary}</div>'+
+                            '<div style="text-indent: 2em;">{summary}</div>'+
                             '<ul class="clearfix inline item_raw_link">'+
                                 '<li ><a class="original_url" href="{fetch_url}" target="_blank" title="查看原始文档">{base_url}</a></li>'+
                             '</ul>'+

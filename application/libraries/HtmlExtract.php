@@ -180,8 +180,6 @@ class HtmlExtract {
 			$tmp = $i;
 			$curTextLen = 0;
 			$portion = $this-> loadStyle();
-			//$portion = '<meta content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport" />';
-			//$portion = $portion.'<link rel="stylesheet" type="text/css" href="/normalize.css" /><link rel="stylesheet" type="text/css" href="/medusa.css" />'; //加载自适应和自定义的CSS
 			while( ($i < $blkNum) && ($this->blksLen[$i] != 0) ) {
 				if( preg_replace( $pattern, $replacement, $this->textLines[$i] != '' )){
 					$portion .= $this->textLines[$i]."\r\n";
@@ -238,7 +236,7 @@ class HtmlExtract {
         switch ($this->platform) {
             case '1':
                 $styleString='<meta content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport" />';
-                $styleString.='<title><?php echo $this->title?></title>';
+                $styleString.='<title><?php echo $this->title?> 离线阅读神器 lixianyuedu.com</title>';
                 $styleString.='<link rel="stylesheet" type="text/css" href="/static/css/normalize.css" />';
                 $styleString.='<link rel="stylesheet" type="text/css" href="/static/css/medusa_pc.css" />';
                 break;

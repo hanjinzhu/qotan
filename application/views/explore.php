@@ -25,9 +25,7 @@ $this->load->view('common/header');
     <?php else:?>
       <?php foreach($collect as $v):?>
         <div class="media">
-          <a class="pull-left" href="#">
-            <img class="media-object"  alt="64x64" src="  " style="width: 50px; height: 50px;">
-          </a>
+    
           <div class="media-body">
             <h4 class="media-heading"><a href=""><?php echo $v['title']?></a></h4>
             <?php echo $v['summary']?>
