@@ -5,16 +5,16 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="renderer" content="webkit">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>数据库查询</title>
+        <title><?php echo $title?></title>
         <link href="/static/css/font-awesome.min.css" rel="stylesheet">
         <link href="http://cdn.bootcss.com/bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet">
         <link href="/static/css/style.css" rel="stylesheet">
         <link href="/static/css/login.css" rel="stylesheet">
     </head>
     <body class="login_bg">
-        <div class="login-form-section">
+        <div class="login-form-section" id="register_form">
             <div class="return_link">
-                <a href="/index"><i class="fa fa-arrow-left"></i>返回</a>
+                <a href="/"><i class="fa fa-arrow-left"></i>返回</a>
             </div>
             <div class="section-title">
                 <h3>账户注册</h3>
@@ -38,7 +38,7 @@
                 </div>
             </div>
             <div class="clearfix login-form-action">
-                <button type="submit" class="btn btn-success pull-left  green-btn submit_register" style="width:100%">注册</button>
+                <button type="submit" class="green-btn submit_register" style="width:100%">注&nbsp;册</button>
                 <div class="clearfix"></div>
             </div>
         </div>

@@ -70,10 +70,10 @@
     border-radius: 0;
 }
 .return_link{
-    color:#fff;position:absolute;top:160px;
+    position:absolute;top:30px;
 }
 .return_link a , .return_link i{
-    color:#fff;  
+    color:#2bbbb2; 
     margin-right: 4px;
 }
 .register_success_info{
@@ -88,4 +88,12 @@
 }
 .app-btn-wrap{
     margin-top: 10px;
+}
+#register_form{
+    margin:40px auto;
+    max-width: 360px;    
+}
+.submit_register{
+    padding: 7px;
+    border: none;
 }

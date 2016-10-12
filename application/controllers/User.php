@@ -9,8 +9,8 @@ class User extends MY_Controller {
 	}
 
 	public function register(){
-		$data['title'] = "账户注册";
-		$this->load->view('register');
+		$data['title'] = "账户注册 -  让阅读更加方便 手机离线阅读的神器 lixianyuedu.com";
+		$this->load->view('register', $data);
 	}
 
 

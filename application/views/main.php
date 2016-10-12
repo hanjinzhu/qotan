@@ -40,7 +40,7 @@
                             </div>
                         </div>
                         <div class="clearfix login-form-action">
-                            <button type="submit" class="pull-right green-btn submit_login_button login_btn">登录</button>
+                            <button type="submit" class="pull-right green-btn submit_login_button login_btn">登&nbsp;录</button>
                             <div class="clearfix"></div>
                             <div class="other_login_type">
                                 <span>其他登陆方式：</span>

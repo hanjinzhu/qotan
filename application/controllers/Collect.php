@@ -1,11 +1,15 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Collect extends CI_Controller {
+class Collect extends MY_Controller {
 
 
 	public function collectUrl(){
-		$user_id =1024;
+		$userInfo = $this->userInfo();
+		if(!$userInfo['data']){
+			//登录超时
+		}
+		$user_id =$this->userId;
 		$url = $this->input->post('url');
 		$this->load->model('collect_model','collect');
 		$ret = $this->collect->collectUrl($url, $user_id);
@@ -13,7 +17,11 @@ class Collect extends CI_Controller {
 	}
 
 	public function getMyCollect(){
-		$user_id =1024;
+		$userInfo = $this->userInfo();
+		if(!$userInfo['data']){
+			//登录超时
+		}
+		$user_id =$this->userId;
 		$this->load->model('collect_model','collect');
 		$ret = $this->collect->getCollectByUserId($user_id);
 		output($ret);

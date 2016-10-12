@@ -10,7 +10,7 @@ class Main extends MY_Controller {
 			$this->load->helper('url');
 			redirect(base_url('/home'));
 		}
-		$data['title']="离线阅读 - 让阅读更加方便 手机离线阅读的神器";
+		$data['title']="离线阅读 - 让阅读更加方便 手机离线阅读的神器 lixianyuedu.com";
 		$this->load->view('main', $data);
 	}
 

@@ -26,6 +26,7 @@ class Collect_Model extends CI_Model {
         $title = $this->htmlextract->getTitle();
         $summary = addslashes(mb_substr(trim(strip_tags(str_replace( [ "\r\n", "\n", "\r" ], '', $transData ))), 0, 150));
         $data_id = $this->_isUrlExsists($url);
+
         $ctime = time();
         if(!$data_id){
             $data = [
