@@ -41,7 +41,11 @@ class User_Model extends CI_Model {
 
         if(is_array($id)){
             $sql = "SELECT * FROM lxyd_user_info WHERE user_id IN (".implode(",",$id).")";
-            $ret = $this->db->query($sql)->result_array();
+            $ret_ori = $this->db->query($sql)->result_array();
+            $ret = [];
+            foreach($ret_ori as $k => $v){
+                $ret[$v['user_id']] = $v;
+            }
         }else{
             if($this->cache_lock){
                 //$redis = new Redis();

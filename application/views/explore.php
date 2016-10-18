@@ -1,9 +1,6 @@
 <?php
 $this->load->view('common/header');
 ?>
-
-
-
 <div class="container" style="margin-top:60px;">
   <div class="row">
     <div class="span9">
@@ -25,23 +22,29 @@ $this->load->view('common/header');
     <?php if(empty($collect)):?>
     <?php else:?>
       <?php foreach($collect as $v):?>
-        <div class="media">
+      <?php static $i =0;?>
+        <div class="media <?php if($i==0):?>no_border_top<?php endif;?>">
           <div class="media-body">
             <h4 class="media-heading"><a href=""><?php echo $v['title']?></a></h4>
-            <?php echo $v['summary']?>
+            <div class="explode_get">
+              <div class="explode_get_btn">
+                <i class="fa fa-star-o" style="font-size:14px;"></i> 收录
+              </div>
+              <div class="explode_get_btn">
+                <i class="fa fa-heart-o"></i> 喜欢
+              </div>
+            </div>
+            <div style="margin-left:54px;line-height: 1.7;"><a href="" style="color:#333;font-weight:bold;font-size:13px;"><?php echo $writeUser[$dataToUser[$v['id']]]['nick']?></a> <span style="color:#999;font-size:13px;margin-left:10px;"><?php echo $writeUser[$dataToUser[$v['id']]]['intro']?></span></div>
+            <div style="margin-left:54px;" class="explore_summary"><?php echo $v['summary']?> <a href="" style="font-size:12px;margin-left:4px;">查看全文</a></div>
           </div>
-          <div class="media-body" style="padding-left:60px;margin-top:8px;">
-            <ul class="inline pull-right" style="display:inline;">
-              <li class="action_favorite" title="收录到我的阅读"><a href=""><i class="fa fa-star-o"></i> 收录到我的阅读</a></li>
-              <li class="action_share" title="分享"><a href=""><i class="fa fa-share"></i>分享</a></li>
-            </ul>
-          </div>
+          
       </div>
+      <?php $i++;?>
       <?php endforeach;?>
     <?php endif;?>
       </div>
     <div class="span3">
-      <?php if($myLikeCatelog):?><a href=""><i class="fa fa-gear"></i> 发现阅读偏好设置</a><?php endif;?>
+      <?php if($myLikeCatelog):?><a href="javascript:void(0);" class="explore_btn"><i class="fa fa-gear"></i> 发现阅读偏好设置</a><?php endif;?>
     </div>
   </div>     
 </div>
@@ -72,6 +75,9 @@ $this->load->view('common/footer');
         $(this).removeClass("label-info");
         $(this).removeClass("label-default");
       }
+    });
+    $(".explore_btn").click(function(){
+        $(".catelog_select").toggle();
     });
   });
 </script>

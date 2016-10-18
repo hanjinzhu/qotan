@@ -1,12 +1,16 @@
 body {
-	background: #f7f9fa;
+	background: #fff;
 }
 a {
     color: #2bbbb2;
 }
 .media {
-    padding: 0px;
-    margin-top: 10px;
+    padding: 12px 0px;
+    margin: 0px;
+    border-top: 1px solid #eee;
+}
+.no_border_top{
+    border-top: none;
 }
 .navbar .nav li.dropdown>.dropdown-toggle .caret {
     border-top-color: #fff;
@@ -60,7 +64,9 @@ a {
 .navbar .btn-navbar {
     display: block;
 }
-
+.media-heading {
+    margin: 0px;
+}
 .navbar-toggle {
     display: none;
     position: relative;
@@ -220,9 +226,24 @@ input, button, select, textarea {
 }
 .media-heading{
     font-size: 16px;
+    line-height: 28px;
 }
 .label {
     -webkit-border-radius: 0px; 
     -moz-border-radius: 0px;
     border-radius: 0px; 
+}
+.explode_get_btn{
+    border:1px solid #2bbbb2;
+    width: 42px;
+    padding: 0px 2px;
+    color:#2bbbb2;
+    cursor:pointer;
+    margin-bottom: 4px;
+    font-size: 12px;
+    border-radius: 2px;
+}
+.explode_get{
+    position: absolute;
+    padding-top:4px; 
 }

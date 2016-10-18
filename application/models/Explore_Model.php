@@ -17,10 +17,10 @@ class Explore_Model extends CI_Model {
         }else{
             $whereClause = "";
         }
-        $sql = "SELECT DISTINCT(t.data_id) FROM (SELECT * FROM lxyd_data_catelog WHERE catelog_id IN (".implode(",",$likeCatelogId).") ".$whereClause."  ORDER BY id DESC LIMIT ".$limit.") AS t";
+        $sql = "SELECT DISTINCT(t.data_id),t.user_id FROM (SELECT * FROM lxyd_data_catelog WHERE catelog_id IN (".implode(",",$likeCatelogId).") ".$whereClause."  ORDER BY id DESC LIMIT ".$limit.") AS t";
         $dataInfo = $this->db->query($sql)->result_array();
-        $ret = array_map(function($row){return $row['data_id'];},$dataInfo);
-        return ['code' => 0, 'msg' => '','data'=>$ret];
+        //$ret = array_map(function($row){return $row['data_id'];},$dataInfo);
+        return ['code' => 0, 'msg' => '','data'=>$dataInfo];
     }
 
     public function getMyExploreCatelog($userId){

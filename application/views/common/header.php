@@ -31,8 +31,8 @@
               <li <?php if($this->router->class == 'explore'):?>class="active"<?php endif;?>>
                 <a href="/explore">发现</a>
               </li>
-              <li <?php if($this->router->class == 'timeline'):?>class="active"<?php endif;?>>
-                <a href="/timeline">动态</a>
+              <!--<li <?php //if($this->router->class == 'timeline'):?>class="active"<?php //endif;?>>
+                <a href="/timeline">动态</a>-->
               </li>
               <li <?php if($this->router->class == 'about'):?>class="active"<?php endif;?>>
                 <a href="/about">关于离线阅读</a>
