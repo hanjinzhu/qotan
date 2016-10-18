@@ -247,3 +247,15 @@ input, button, select, textarea {
     position: absolute;
     padding-top:4px; 
 }
+.footer{
+	padding:10px;border-top: 1px solid #e8e8e8;margin-top:90px;
+}
+.footer a {
+	color:#95a5a6;
+	text-decoration:none;
+}
+.footer .dot{
+	margin:0px 4px;
+	color:#95a5a6;
+	text-decoration:none;
+}

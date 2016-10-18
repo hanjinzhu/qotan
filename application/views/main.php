@@ -44,8 +44,8 @@
                             <div class="clearfix"></div>
                             <div class="other_login_type">
                                 <span>其他登陆方式：</span>
-                                <a href="" title="新浪微博">新浪微博</a>
-                                <a href="" title="腾讯QQ">腾讯QQ</a>
+                                <a href="" title="新浪微博"><i class="fa fa-weibo" style="font-size:16px;"></i> 新浪微博</a>
+                                <a href="" title="腾讯QQ"><i class="fa fa-qq" ></i> 腾讯QQ</a>
                             </div>
                             <div class="app-btn-wrap">
                                 <button type="submit" class="pull-left pink-btn app-btn">
@@ -74,6 +74,18 @@
                     </div>
                 </div>
             </div>
+            <div class="footer">
+            	<div class="pull-left"><a href="/">&copy; 2016 离线阅读 lixianyuedu.com</a></div>
+            	<div class="pull-right">
+            		<span class="dot">·</span>
+            		<a href="/contact">联系我们</a>
+            		<span class="dot">·</span>
+            		<a href="/contact">关于离线阅读</a>
+            		<span class="dot">·</span>
+            		<a href="http://www.miibeian.gov.cn/">晋ICP备16005102号</a>
+            	</div>
+            </div>
+
         </div>
   </body>
 </html>
