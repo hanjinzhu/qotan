@@ -21,6 +21,25 @@
                 <div class="span8">
                     <div class="white_pannel">
                         <img src="/static/images/web/sub_title.png" style="width:500px;">
+
+
+					<?php foreach($collect as $v):?>
+			        <?php static $i =0;?>
+			        <div class="media <?php if($i==0):?>no_border_top<?php endif;?>">
+			          <div class="media-body">
+			            <h4 class="media-heading"><a href=""><?php echo $v['title']?></a></h4>
+			    
+			            <div style="line-height: 1.7;"><a href="" style="color:#333;font-weight:bold;font-size:13px;"><?php echo $writeUser[$dataToUser[$v['id']]]['nick']?></a> <span style="color:#999;font-size:13px;margin-left:10px;"><?php echo $writeUser[$dataToUser[$v['id']]]['intro']?></span></div>
+			            <div class="explore_summary"><?php echo $v['summary']?> <a href="" style="font-size:12px;margin-left:4px;">查看全文</a></div>
+			          </div>
+			        </div>
+			        <?php $i++;?>
+			        <?php endforeach;?>
+
+
+
+
+
                     </div>
                 </div>
                 <div class="span4">
