@@ -17,7 +17,7 @@
                 <a href="/"><i class="fa fa-arrow-left"></i>返回</a>
             </div>
             <div class="section-title">
-                <h3>账户注册</h3>
+                <h3>离线阅读账户注册</h3>
             </div>
             <div class="textbox-wrap">
                 <div class="input-prepend">

@@ -14,13 +14,22 @@
   </head>
 
   <body class="login_bg">
-       <div class="color-line" style="position:relative;top:-40px"></div>
+       <div class="navbar  navbar-fixed-top bs-docs-nav">
+        	<div class="container">
+        	
+        		<img src="/static/images/web/header_banner_logo.png" style="padding: 10px 0px 0px;width:20px;float:left;margin-right:8px;">
+          		<a class="brand" href="/">离线阅读神器</a>
+          		<img src="/static/images/web/header_banner.png" style="padding: 15px 0px 0px;">
+      		</div>
+      		<div class="color-line"></div>
+		</div>	
         
-        <div class="container" >
+        <div class="container" style="margin-top:64px;">
             <div class="row">
                 <div class="span8">
-                    <div class="white_pannel">
-                        <img src="/static/images/web/sub_title.png" style="width:500px;">
+                    <div class="white_pannel main_pannel">
+                    <div style="position:absolute;background:url('/static/images/web/pannel_cover.png') left top repeat-x; width:580px;height:60px;top: 504px;"></div>
+                        
 
 
 					<?php foreach($collect as $v):?>
@@ -36,6 +45,18 @@
 			        <?php $i++;?>
 			        <?php endforeach;?>
 
+<?php foreach($collect as $v):?>
+			        <?php static $i =0;?>
+			        <div class="media <?php if($i==0):?>no_border_top<?php endif;?>">
+			          <div class="media-body">
+			            <h4 class="media-heading"><a href=""><?php echo $v['title']?></a></h4>
+			    
+			            <div style="line-height: 1.7;"><a href="" style="color:#333;font-weight:bold;font-size:13px;"><?php echo $writeUser[$dataToUser[$v['id']]]['nick']?></a> <span style="color:#999;font-size:13px;margin-left:10px;"><?php echo $writeUser[$dataToUser[$v['id']]]['intro']?></span></div>
+			            <div class="explore_summary"><?php echo $v['summary']?> <a href="" style="font-size:12px;margin-left:4px;">查看全文</a></div>
+			          </div>
+			        </div>
+			        <?php $i++;?>
+			        <?php endforeach;?>
 
 
 
@@ -90,6 +111,13 @@
                             <h4>我忘记了密码?</h4>
                             <a href="/user/forget_password">点击此处链接</a>
                             <span>去找回密码</span>
+                        </div>
+                    </div>
+                    <div class="login-form-section login-form-links">
+                        <div class="textbox-wrap">
+                            <h4>如何保存网页离线阅读?</h4>
+                            <a href="/user/forget_password">点击此处链接</a>
+                            <span>了解离线阅读的流程</span>
                         </div>
                     </div>
                 </div>

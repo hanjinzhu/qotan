@@ -22,6 +22,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
+          <img src="/static/images/web/header_banner_logo.png" style="padding: 10px 0px 0px;width:20px;float:left;margin-right:8px;">
           <a class="brand" href="/">离线阅读神器</a>
           <div class="nav-collapse collapse">
             <ul class="nav">
