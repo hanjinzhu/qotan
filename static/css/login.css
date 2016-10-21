@@ -17,7 +17,7 @@
     border:1px solid #e8e8e8;
 }
 .submit_login_button{
-   padding: 7px 116px;
+   padding: 7px 113px;
    border: none;
 }
 .remember_me {margin-top: 12px;}
@@ -28,7 +28,7 @@
     margin-right:4px;
 }
 .section-title {
-    padding: 10px 20px;
+    padding: 10px 20px 0px 20px;
     background-color: white;
 }
 .section-title h3 {
@@ -61,7 +61,7 @@
 }
 
 .login-form-action {
-    padding: 15px 20px 20px 20px;
+    padding: 10px 20px 20px 20px;
 }
 
 
@@ -76,10 +76,10 @@
     margin-right: 4px;
 }
 .register_success_info{
-    text-align:center;border:2px dashed #fff;padding:20px;color:#fff;display:none;
+    text-align:center;border:2px dashed #2bbbb2;padding:20px;color:#2bbbb2;display:none;margin-top:160px;
 }
 .register_success_info a{
-    color:#fff;text-decoration: underline;
+    color:#2bbbb2;text-decoration: underline;
 }
 .app-btn {
     padding: 7px 16px;
@@ -89,7 +89,7 @@
     margin-top: 10px;
 }
 #register_form{
-    margin:40px auto;
+    margin:120px auto;
     max-width: 360px;    
 }
 .submit_register{
@@ -98,4 +98,10 @@
 }
 .navbar .container {
     width: 940px;
+}
+#active_mail{
+	color:#b53f3f;	
+}
+.login_error{
+	margin-bottom:10px;color:red;margin-left:2px;display:none;
 }

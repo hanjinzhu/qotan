@@ -81,6 +81,9 @@
                             </div>
                         </div>
                         <div class="clearfix login-form-action">
+                        	<div class="login_error">
+                        		<i class="fa fa-exclamation-triangle" aria-hidden="true"></i> <span class="login_error_info"></span>
+                        	</div>
                             <button type="submit" class="pull-right green-btn submit_login_button login_btn">登&nbsp;录</button>
                             <div class="clearfix"></div>
                             <div class="other_login_type">
@@ -113,13 +116,6 @@
                             <span>去找回密码</span>
                         </div>
                     </div>
-                    <div class="login-form-section login-form-links">
-                        <div class="textbox-wrap">
-                            <h4>如何保存网页离线阅读?</h4>
-                            <a href="/user/forget_password">点击此处链接</a>
-                            <span>了解离线阅读的流程</span>
-                        </div>
-                    </div>
                 </div>
             </div>
             <div class="footer">
@@ -145,7 +141,8 @@
                 if(data['code'] == 0){
                     window.location.href="/home";
                 }else{
-                    //todo 错误提示
+                	$(".login_error_info").text(data['msg']);
+                    $(".login_error").show();
                 }
             },"json");
         });

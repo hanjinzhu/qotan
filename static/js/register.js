@@ -46,9 +46,14 @@
 	$(".submit_register").click(function(){
 		$.get("/user/doregister", {email:$(".email").val(),nick:$(".nick").val(),password:$(".password").val()},function(data){
 		  	if(data['code'] == 0){
+		  		if(data['mail_name']){
+		  			$("#active_mail").attr("href",data['mail_addr']);
+		  			$(".who_mail").text(data['mail_name']);
+		  		}else{
+		  			$("#active_mail").hide();
+		  		}
 		  		$(".register_success_info").show();
 		  		$(".login-form-section").hide();
-		  		var intervalid = setInterval("clock()", 1000);
 		  	}else{
 		  		if(typeof(data['error_type'])!="undefined"){
 		  			var error_type = data['error_type'];
@@ -61,12 +66,3 @@
 	});
 })();
 
-var sec = 5; 
-function clock() { 
-	if (sec == 0) { 
-		window.location.href="/home";
-		clearInterval(intervalid); 
-	} 
-	$("#mes").text(sec); 
-	sec--; 
-}  

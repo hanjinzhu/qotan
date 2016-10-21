@@ -12,6 +12,14 @@
         <link href="/static/css/login.css" rel="stylesheet">
     </head>
     <body class="login_bg">
+    	<div class="navbar  navbar-fixed-top bs-docs-nav">
+        	<div class="container">
+        		<img src="/static/images/web/header_banner_logo.png" style="padding: 10px 0px 0px;width:20px;float:left;margin-right:8px;">
+          		<a class="brand" href="/">离线阅读神器</a>
+          		<img src="/static/images/web/header_banner.png" style="padding: 15px 0px 0px;">
+      		</div>
+      		<div class="color-line"></div>
+		</div>	
         <div class="login-form-section" id="register_form">
             <div class="return_link">
                 <a href="/"><i class="fa fa-arrow-left"></i>返回</a>
@@ -43,7 +51,8 @@
             </div>
         </div>
         <div class="container register_success_info">
-            <i class="fa fa-check"></i> 感谢您注册和使用离线阅读。我们给您发送了验证邮件激活您的帐号 <a href="/home"><span id="mes">5</span> 秒钟后返回</a>
+        	<p style="font-size:18px;"><i class="fa fa-check"></i> 注册成功</p>
+            <p>感谢您注册和使用离线阅读，我们给您发送了验证邮件激活您的帐号。 <a href="" id="active_mail">前往<span class="who_mail"></span>邮箱激活</a> | <a href="/">返回首页</a></p>
         </div>
     </body>
     <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>

@@ -88,7 +88,13 @@ class User extends MY_Controller {
 			$ret  =  $this->user->register($email, $nick, $password);
 		
 			if($ret['code']==0){
-				$this->user->setAuth($ret['data']['user_id'],$ret['data']['auth_key']);
+				$this->load->model('mail_model','mail');
+				$mail = $this->mail->getMailLoginInfo($email);
+				if($mail){
+					$ret['mail_name'] = substr($mail['mail_name'], 0,strpos($mail['mail_name'],"."));
+					$ret['mail_addr'] = $mail['mail_addr'];
+				}
+				//$this->user->setAuth($ret['data']['user_id'],$ret['data']['auth_key']);
 			}
 			output($ret);
 		}
