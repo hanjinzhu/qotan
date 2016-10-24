@@ -53,11 +53,10 @@ class Collect_Model extends CI_Model {
             'status' => 1,
             'create_time' => $ctime,
         ];
-        $data_id = $this->db->insert('lxyd_collect', $data);
-
+        $ret = $this->db->insert('lxyd_collect', $data);
         
-        if($data_id){
-            return ['code' => 0, 'msg' => '','data'=>['title'=>$title,'summary'=>$summary,'fetch_url'=>$url, 'base_url'=>$baseUrl]];
+        if($ret){
+            return ['code' => 0, 'msg' => '','data'=>['id'=>$data_id,'title'=>$title,'summary'=>$summary,'fetch_url'=>$url, 'base_url'=>$baseUrl]];
         }else{
             return ['code' => 500, 'msg' => '系统错误，请稍后再试'];
         }

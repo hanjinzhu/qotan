@@ -20,6 +20,7 @@ $this->load->view('common/footer');
 
 <script>
 $(document).ready(function(){
+    var page = 1;
     var item_tpl =  '<div class="item">'+
                         '<div class="item_content">'+
                             '<a href="/collect/getcollectdetail?id={id}"><h5>{title}</h5></a>'+
@@ -78,6 +79,11 @@ $(document).ready(function(){
                     alert("fail");
                 }
             },"json");
+        }
+    });
+    $(window).scroll(function() { 
+        if ($(document).scrollTop() >= $(document).height() - $(window).height()) {
+            
         }
     });
 });
