@@ -30,12 +30,13 @@ class Collect extends MY_Controller {
 	public function getCollectDetail(){
 		$id = $this->input->get('id');
 		$this->load->model('collect_model','collect');
-		$ret = $this->collect->getCollectById($id);
+		$ret = $this->collect->getCollectById($id); 
 		if($ret['code']){
 			$this->load->helper('url');
 			redirect('/home', 'refresh');
 		}else{
-			$this->load->view('my_collect_detail',['article'=>$ret['data']['trans_data']]);
+			$data['article'] = $ret['data']['trans_data'];
+			$this->load->view('my_collect_detail',$data);
 		}
 	}
 
