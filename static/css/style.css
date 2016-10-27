@@ -248,7 +248,7 @@ input, button, select, textarea {
     padding-top:4px; 
 }
 .footer{
-	padding:10px;border-top: 1px solid #e8e8e8;margin-top:20px;
+	padding:10px 0px;border-top: 1px solid #e8e8e8;margin-top:20px;
 }
 .footer a {
 	color:#95a5a6;

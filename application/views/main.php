@@ -128,6 +128,7 @@
             		<span class="dot">·</span>
             		<a href="http://www.miibeian.gov.cn/">晋ICP备16005102号</a>
             	</div>
+                <div class="clearfix"></div>
             </div>
 
         </div>
