@@ -34,8 +34,8 @@ $(document).ready(function(){
                             '</ul>'+
                         '</div>'+
                     '</div>';
-                                
-    $.get("/collect/getmycollect", {},function(ret){
+
+    $.get("/collect/getmycollect", {page:page},function(ret){
         var list = ret.data;
         temp_tpl = '';
         for (i in list){
@@ -53,6 +53,8 @@ $(document).ready(function(){
           }
         );
     },"json");
+                             
+
 
     $(".item").hover(
       function(){
@@ -81,10 +83,6 @@ $(document).ready(function(){
             },"json");
         }
     });
-    $(window).scroll(function() { 
-        if ($(document).scrollTop() >= $(document).height() - $(window).height()) {
-            alert("sss");
-        }
-    });
+
 });
 </script>

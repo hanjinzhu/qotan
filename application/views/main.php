@@ -44,23 +44,6 @@
 			        </div>
 			        <?php $i++;?>
 			        <?php endforeach;?>
-
-<?php foreach($collect as $v):?>
-			        <?php static $i =0;?>
-			        <div class="media <?php if($i==0):?>no_border_top<?php endif;?>">
-			          <div class="media-body">
-			            <h4 class="media-heading"><a href=""><?php echo $v['title']?></a></h4>
-			    
-			            <div style="line-height: 1.7;"><a href="" style="color:#333;font-weight:bold;font-size:13px;"><?php echo $writeUser[$dataToUser[$v['id']]]['nick']?></a> <span style="color:#999;font-size:13px;margin-left:10px;"><?php echo $writeUser[$dataToUser[$v['id']]]['intro']?></span></div>
-			            <div class="explore_summary"><?php echo $v['summary']?> <a href="" style="font-size:12px;margin-left:4px;">查看全文</a></div>
-			          </div>
-			        </div>
-			        <?php $i++;?>
-			        <?php endforeach;?>
-
-
-
-
                     </div>
                 </div>
                 <div class="span4">
@@ -118,19 +101,20 @@
                     </div>
                 </div>
             </div>
-            <div class="footer">
-            	<div class="pull-left"><a href="/">&copy; 2016 离线阅读 lixianyuedu.com</a></div>
-            	<div class="pull-right">
-            		<span class="dot">·</span>
-            		<a href="/contact">联系我们</a>
-            		<span class="dot">·</span>
-            		<a href="/contact">关于离线阅读</a>
-            		<span class="dot">·</span>
-            		<a href="http://www.miibeian.gov.cn/">晋ICP备16005102号</a>
-            	</div>
-                <div class="clearfix"></div>
-            </div>
+            
 
+        </div>
+        <div class="footer container">
+                <div class="pull-left"><a href="/">&copy; 2016 离线阅读 lixianyuedu.com</a></div>
+                <div class="pull-right">
+                    <span class="dot">·</span>
+                    <a href="/contact">联系我们</a>
+                    <span class="dot">·</span>
+                    <a href="/contact">关于离线阅读</a>
+                    <span class="dot">·</span>
+                    <a href="http://www.miibeian.gov.cn/">晋ICP备16005102号</a>
+                </div>
+                <div class="clearfix"></div>
         </div>
   </body>
 </html>

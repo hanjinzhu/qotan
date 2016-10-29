@@ -21,6 +21,7 @@ class Collect extends MY_Controller {
 		if(!$userInfo['data']){
 			//登录超时
 		}
+	
 		$user_id =$this->userId;
 		$this->load->model('collect_model','collect');
 		$ret = $this->collect->getCollectByUserId($user_id);

@@ -65,16 +65,17 @@ class User_Model extends CI_Model {
         $this->db->insert('lxyd_user', $data);
         $userId = $this->db->insert_id();
         if($userId){
+            $verifyCode = substr(md5(time().uniqid()),0,16);
             $data = [
                 'user_id' => $userId,
                 'status' => self::USER_STATUS_UNACTIVE,
                 'nick' => $nick,
-                'verify_code' => substr(md5(time().uniqid()),0,16),
+                'verify_code' => $verifyCode,
                 'verify_code_expire' => time()+86400,
                 'create_time' => time(),
             ];
             $this->db->insert('lxyd_user_info', $data);
-            return ['code' => 0,'msg'=>'注册成功','data'=>['user_id'=>$userId, 'auth_key'=>substr($password, 20, 16)]];
+            return ['code' => 0,'msg'=>'注册成功','data'=>['user_id'=>$userId, 'verify_code'=>$verifyCode]];
         }else{
             return ['code' => 500, 'msg' => '用户注册失败，请稍后再试'];
         }

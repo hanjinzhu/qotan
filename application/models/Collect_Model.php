@@ -11,7 +11,7 @@ class Collect_Model extends CI_Model {
         
         $this->cache_lock = $this->config->item('cache_lock');
     }
-
+    
     public function collectUrl($url, $userId, $platform = 1){
         if(!filter_var($url, FILTER_VALIDATE_URL)){
             return ['code' => 100, 'msg' => 'URL格式错误'];
@@ -62,7 +62,7 @@ class Collect_Model extends CI_Model {
         }
     }
 
-    public function getCollectByUserId($userId, $page=1, $limit=12){
+    public function getCollectByUserId($userId, $page=1, $limit=1200){
         $offset = $page - 1;
         $sql = "SELECT id,title,summary,fetch_url FROM lxyd_data WHERE id IN (SELECT data_id FROM lxyd_collect WHERE user_id='$userId') ORDER BY id DESC  LIMIT $offset,$limit";
         $ret = $this->db->query($sql)->result_array();

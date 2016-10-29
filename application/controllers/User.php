@@ -86,17 +86,16 @@ class User extends MY_Controller {
 			//自检完毕 注册账户
 
 			$ret  =  $this->user->register($email, $nick, $password);
-		
 			if($ret['code']==0){
-				$this->load->model('mail_model','mail');
-				$mail = $this->mail->getMailLoginInfo($email);
-				if($mail){
-					$ret['mail_name'] = substr($mail['mail_name'], 0,strpos($mail['mail_name'],"."));
-					$ret['mail_addr'] = $mail['mail_addr'];
-				}
+				//发送邮件 暂时使用同步发送 视情况构建redis list队列发送
+				$salt = $this->config->item('salt');
+				$url = $this->config->item('base_url').'user/verify/'.$ret['data']['user_id'].'/'.$ret['data']['verify_code'].'/'.md5($ret['data']['user_id'].$ret['data']['verify_code'].$salt);
+				$this->load->library('Mailer',['sendType'=>'register','url' => $url,'email'=>$email]);
+				$this->mailer->sendMail();
+				output($ret);
 				//$this->user->setAuth($ret['data']['user_id'],$ret['data']['auth_key']);
 			}
-			output($ret);
+			
 		}
 	}
 

@@ -19,4 +19,9 @@ class Home extends MY_Controller {
 	{
 		$this->load->view('register');
 	}
+
+	public function test(){
+		$this->load->library('Mailer',['sendType'=>'register','url'=>'http://www.lixianyuedu.com','email'=>'601630504@qq.com']);
+		$this->mailer->sendMail();
+	}
 }
